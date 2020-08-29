@@ -89,49 +89,35 @@
 
             <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">تذاكر المراسلات   </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">تذاكر المواصلات   </span>
                     <span
                         class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> تذاكر الطلاب </a>
+                                          data-i18n="nav.dash.ecommerce">  تذاكر الطلاب </a>
                     </li>
                 </ul>
             </li>
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
-                                                                                    data-i18n="nav.templates.main">Templates</span></a>
+                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.settings')}}</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">Vertical</a>
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.shipping methods')}}</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="../vertical-menu-template"
-                                   data-i18n="nav.templates.vert.classic_menu">Classic Menu</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','free')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.free shipping')}}</a>
                             </li>
-                            <li><a class="menu-item" href="../vertical-modern-menu-template">Modern Menu</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','local')}}">{{__('admin/sidebar.local pickup')}}</a>
                             </li>
-                            <li><a class="menu-item" href="../vertical-compact-menu-template"
-                                   data-i18n="nav.templates.vert.compact_menu">Compact Menu</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','outer')}}"
+                                   data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.flat rate')}}</a>
                             </li>
-                            <li><a class="menu-item" href="../vertical-content-menu-template"
-                                   data-i18n="nav.templates.vert.content_menu">Content Menu</a>
-                            </li>
-                            <li><a class="menu-item" href="../vertical-overlay-menu-template"
-                                   data-i18n="nav.templates.vert.overlay_menu">Overlay Menu</a>
-                            </li>
+
                         </ul>
                     </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="../horizontal-menu-template"
-                                   data-i18n="nav.templates.horz.classic">Classic</a>
-                            </li>
-                            <li><a class="menu-item" href="../horizontal-menu-template-nav"
-                                   data-i18n="nav.templates.horz.top_icon">Full Width</a>
-                            </li>
-                        </ul>
-                    </li>
+
                 </ul>
             </li>
             <li class=" navigation-header">
