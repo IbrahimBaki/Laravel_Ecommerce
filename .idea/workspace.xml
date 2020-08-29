@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="" />
+    <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -114,9 +122,15 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/astrotomic/laravel-translatable" />
+      <path value="$PROJECT_DIR$/vendor/mcamara/laravel-localization" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gBMpXSXkG4Vp7jwT6hdgWEnDnQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -124,10 +138,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\routes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -143,11 +172,45 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597583715576</updated>
-      <workItem from="1597583716764" duration="377000" />
+      <workItem from="1597583716764" duration="9038000" />
+      <workItem from="1597696762935" duration="3110000" />
+      <workItem from="1597750984990" duration="13106000" />
+      <workItem from="1597843708867" duration="7333000" />
+      <workItem from="1597924577155" duration="4077000" />
+      <workItem from="1597958252117" duration="3195000" />
+      <workItem from="1598024762726" duration="4997000" />
+      <workItem from="1598047280749" duration="7843000" />
+      <workItem from="1598270711965" duration="13876000" />
+      <workItem from="1598358093782" duration="2970000" />
+      <workItem from="1598458484773" duration="15549000" />
+      <workItem from="1598721079750" duration="1929000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1936" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597847929089">
+      <screen x="1366" y="-152" width="1680" height="1010" />
+    </state>
+    <state x="1936" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597847929089" />
+    <state x="1846" y="260" key="FileChooserDialogImpl" timestamp="1598050476357">
+      <screen x="1366" y="0" width="1400" height="1010" />
+    </state>
+    <state x="1846" y="260" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1598050476357" />
+    <state x="1913" y="-48" width="585" height="801" key="find.popup" timestamp="1597759142743">
+      <screen x="1366" y="-152" width="1680" height="1010" />
+    </state>
+    <state x="1913" y="-48" width="585" height="801" key="find.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597759142743" />
+    <state x="1862" y="157" key="run.anything.popup" timestamp="1597697472979">
+      <screen x="1366" y="-152" width="1680" height="1010" />
+    </state>
+    <state x="1862" y="157" key="run.anything.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597697472979" />
+    <state x="1864" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1598054105381">
+      <screen x="1366" y="0" width="1400" height="1010" />
+    </state>
+    <state x="1864" y="319" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1598054105381" />
+    <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597850643901" />
   </component>
 </project>
