@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/general.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/adminContent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/sidebar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/adminContent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/sidebar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/shippings/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laravellocalization.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laravellocalization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +183,7 @@
       <workItem from="1598270711965" duration="13876000" />
       <workItem from="1598358093782" duration="2970000" />
       <workItem from="1598458484773" duration="15549000" />
-      <workItem from="1598721079750" duration="1177000" />
+      <workItem from="1598721079750" duration="1929000" />
     </task>
     <servers />
   </component>
