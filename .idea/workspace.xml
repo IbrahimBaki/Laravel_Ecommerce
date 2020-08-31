@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/shipping.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/shipping.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/messages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/messages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/alerts/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/alerts/success.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ShippingsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ShippingsRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/settings/shippings/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/shippings/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +189,7 @@
       <workItem from="1598358093782" duration="2970000" />
       <workItem from="1598458484773" duration="15549000" />
       <workItem from="1598721079750" duration="5034000" />
-      <workItem from="1598880398969" duration="5951000" />
+      <workItem from="1598880398969" duration="10349000" />
     </task>
     <servers />
   </component>

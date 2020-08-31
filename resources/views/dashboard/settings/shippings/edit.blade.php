@@ -48,25 +48,9 @@
                                             @method('PUT')
 
                                             <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
-{{--
-                                            <div class="form-group">
-                                                <div class="text-center">
-                                                    <img
-                                                        src="{{$vendor  -> logo}}"
-                                                        class="rounded-circle  height-250" alt="صورة القسم  ">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label> لوجو التجار </label>
-                                                <label id="projectinput7" class="file center-block">
-                                                    <input type="file" id="file" name="logo">
-                                                    <span class="file-custom"></span>
-                                                </label>
-                                                @error('logo')
-                                                <span class="text-danger">{{$message}}</span>
-                                                @enderror
-                                            </div>
---}}
+
+
+
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> {{__('admin/shipping.storeData')}} </h4>
@@ -89,9 +73,10 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> {{__('admin/shipping.shippingValue')}} </label>
-                                                            <input type="number" value="" id="plain_value"
+                                                            <input type="number" id="plain_value"
                                                                    class="form-control"
                                                                    placeholder="  "
+                                                                   value="{{$shippingMethod -> plain_value}}"
                                                                    name="plain_value">
                                                             @error("plain_value")
                                                             <span class="text-danger">{{$message}}</span>
