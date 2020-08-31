@@ -22,4 +22,17 @@ class LoginController extends Controller
         return redirect()->back()->with(['error'=>'There is a mistake in the data']);
 
     }
+
+    public function logout()
+    {
+       $guard = $this->getGuard();
+       $guard->logout();
+
+       return redirect()->route('admin.login');
+    }
+
+    private function getGuard()
+    {
+        return auth('admin');
+    }
 }

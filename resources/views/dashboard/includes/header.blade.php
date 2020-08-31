@@ -11,8 +11,8 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.html">
                         <img class="brand-logo" alt="modern admin logo"
-                             src="{{asset('assets/admin/images/logo/logo.png')}}">
-                        <h3 class="brand-text">Modern Admin</h3>
+                             src="{{asset('assets/admin/images/wolf.png')}}">
+                        <h3 class="brand-text">Wolf Admin</h3>
                     </a>
                 </li>
                 <li class="nav-item d-md-none">
@@ -29,21 +29,29 @@
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
+                <ul class="nav navbar-nav mr-auto float-left">
+                    <li  style="margin: 10px 0px 0px 5px"><h2 class="text-bold-700" style="color: white">Wolf Store</h2></li>
+                    <li>
+                        <img class="brand-logo" alt="modern admin logo"
+                             src="{{asset('assets/admin/images/wolf1.png')}}"
+                            height="50px"
+                            width="70px">
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="mr-1">مرجبا
+                <span class="mr-1">
                   <span
-                      class="user-name text-bold-700">  Ibrahim Baki </span>
+                      class="user-name text-bold-700">{{auth('admin')->user()->name}}</span>
                 </span>
                             <span class="avatar avatar-online">
-                  <img  style="height: 35px;" src="" alt="avatar"><i></i></span>
+                  <img  style="height: 35px;" src="{{asset('assets/admin/images/adminIcon.png')}}" alt="avatar"><i></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
-                                    class="ft-user"></i> تعديل الملف الشحصي </a>
+                                    class="ft-user"></i> {{__('admin/header.editProfile')}} </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><i class="ft-power"></i> تسجيل
-                                الخروج </a>
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> {{__('admin/header.logOut')}} </a>
                         </div>
                     </li>
 
