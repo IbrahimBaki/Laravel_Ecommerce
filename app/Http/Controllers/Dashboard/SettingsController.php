@@ -17,7 +17,7 @@ class  SettingsController extends Controller
         } elseif ($type === 'outer') {
             $shippingMethod = Setting::where('key', 'outer_label')->first();
         }else{
-            $shippingMethod = '<h1>Check Your Method</h1>';
+            $shippingMethod = Setting::where('key', 'free_shipping_label')->first();
         }
 
 
@@ -26,6 +26,7 @@ class  SettingsController extends Controller
 
     public function updateShippingMethods(Request $request ,$id)
     {
+        // validation
 
     }
 }
