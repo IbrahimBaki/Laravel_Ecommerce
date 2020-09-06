@@ -11,11 +11,20 @@ return [
     |
     */
 
+
+    'languages'=>'اختر اللغة',
+    'showAllLanguages' =>'عرض الكل',
+    'addLanguage' =>'اضافة لغة جديدة',
+
+
+
+    //////////////////////////////////////
     'settings'          =>'الاعدادات',
     'shipping methods'  =>'وسائل التوصيل',
     'free shipping'     =>'توصيل مجاني',
     'local pickup'      =>'توصيل داخلي',
     'flat rate'         =>'توصيل خارجي',
+
 
 
 

@@ -4,22 +4,34 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span
+            <li class="nav-item active"><a href=""><i class="la la-home"></i><span
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
             </li>
 
             <li class="nav-item  open ">
-                <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
+                <a href=""><i class="la la-language"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.languages')}} </span>
                     <span
                         class="badge badge badge-info badge-pill float-right mr-2"></span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+
+                    <li class="active">
+
+                        <a class="menu-item" data-i18n="nav.dash.ecommerce" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            لغة جديده </a>
+                    @endforeach
+                </ul>
+
+                <ul class="menu-content">
+                    <li class="active">
+                        <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAllLanguages')}} </a>
+                    </li>
+                    <li>
+                        <a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addLanguage')}} </a>
                     </li>
                 </ul>
             </li>
@@ -101,7 +113,7 @@
             </li>
 
 
-            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
+            <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title"
                                                                                     data-i18n="nav.templates.main">{{__('admin/sidebar.settings')}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.shipping methods')}}</a>

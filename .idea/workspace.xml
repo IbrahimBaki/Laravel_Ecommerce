@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/admin/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/admin/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/profile/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/admin/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/admin/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/admin/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/admin/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,18 +154,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\profile" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
       <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang" />
-      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
-      <recent name="C:\xampp\htdocs\ecommerce\public\assets\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,7 +194,13 @@
       <workItem from="1598358093782" duration="2970000" />
       <workItem from="1598458484773" duration="15549000" />
       <workItem from="1598721079750" duration="5034000" />
-      <workItem from="1598880398969" duration="14766000" />
+      <workItem from="1598880398969" duration="19623000" />
+      <workItem from="1598978029674" duration="51000" />
+      <workItem from="1598978111701" duration="464000" />
+      <workItem from="1598979461005" duration="12484000" />
+      <workItem from="1599254091786" duration="4733000" />
+      <workItem from="1599313132140" duration="1199000" />
+      <workItem from="1599409591853" duration="3767000" />
     </task>
     <servers />
   </component>

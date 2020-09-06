@@ -10,6 +10,14 @@ return [
     |
     | free shipping    local pickup    flat Rate
     */
+
+
+    'languages'=>'Select Language',
+    'showAllLanguages' =>'Show All',
+    'addLanguage' =>'Add New Language',
+
+
+
     'settings'          =>'Settings',
     'shipping methods'  =>'Shipping Methods',
     'free shipping'     =>'Free Shipping',
