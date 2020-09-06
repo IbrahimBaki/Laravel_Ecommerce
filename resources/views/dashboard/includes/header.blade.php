@@ -48,12 +48,14 @@
                             <span class="avatar avatar-online">
                   <img  style="height: 35px;" src="{{asset('assets/admin/images/adminIcon.png')}}" alt="avatar"><i></i></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edit.profile')}}"><i
                                     class="ft-user"></i> {{__('admin/header.editProfile')}} </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> {{__('admin/header.logOut')}} </a>
                         </div>
+
                     </li>
+
 
                     <li class="dropdown dropdown-notification nav-item">
                         <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
