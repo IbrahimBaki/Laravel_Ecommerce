@@ -1,5 +1,6 @@
 <?php
 
+define('PAGINATION_COUNT',15);
 
      function getFolder()
     {

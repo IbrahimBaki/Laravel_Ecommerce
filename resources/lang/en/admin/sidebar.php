@@ -12,9 +12,19 @@ return [
     */
 
 
+///////////// Main Page ////////////////////////
+
+    'home' =>'Home',
+
+
+///////////// settings /////////////////////////
+
     'languages'=>'Select Language',
-    'showAllLanguages' =>'Show All',
+    'showAll' =>'Show All',
     'addLanguage' =>'Add New Language',
+
+    'addCategory' =>'Add New Category',
+    'subCategories'=>'Sub Categories',
 
 
 

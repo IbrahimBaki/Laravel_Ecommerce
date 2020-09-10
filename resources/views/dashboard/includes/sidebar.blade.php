@@ -4,8 +4,8 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="nav-item active"><a href=""><i class="la la-home"></i><span
-                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
+            <li class="nav-item active"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span
+                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.home')}} </span></a>
             </li>
 
             <li class="nav-item  open ">
@@ -28,7 +28,7 @@
 
                 <ul class="menu-content">
                     <li class="active">
-                        <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAllLanguages')}} </a>
+                        <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li>
                         <a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addLanguage')}} </a>
@@ -37,32 +37,30 @@
             </li>
 
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الرئيسيه </span>
+            <li class="nav-item"><a href=""><i class="la la-file-text"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/categories.mainCategories')}} </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2"></span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::parent()->count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.mainCategories','main_category')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}}</a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            قسم جديد </a>
+                    <li><a class="menu-item" href="{{route('admin.mainCategories.create','main_category')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
                     </li>
                 </ul>
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الفرعية   </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.subCategories')}}  </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">400</span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::child()->count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.mainCategories','sub_category')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            قسم فرعي جديد </a>
+                    <li><a class="menu-item" href="{{route('admin.mainCategories.create','sub_category')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
                     </li>
                 </ul>
             </li>
