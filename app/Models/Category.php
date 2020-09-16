@@ -29,4 +29,9 @@ class Category extends Model
     {
        return $this->is_active == 0 ? __('admin/categories.notActive') : __('admin/categories.active') ;
     }
+
+    public function parentId()
+    {
+        return $this->belongsTo(self::class,'parent_id');
+    }
 }
