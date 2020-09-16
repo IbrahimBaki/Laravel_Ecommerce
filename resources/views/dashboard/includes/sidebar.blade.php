@@ -36,8 +36,8 @@
                 </ul>
             </li>
 
-
-            <li class="nav-item"><a href=""><i class="la la-file-text"></i>
+                {{--###########   Main Category  ##################--}}
+            <li class="nav-item"><a href=""><i class="la la-navicon"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/categories.mainCategories')}} </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::parent()->count()}}</span>
@@ -51,7 +51,8 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            {{--###########   Sub Category      ##################--}}
+            <li class="nav-item"><a href=""><i class="la la-list-ul"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.subCategories')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::child()->count()}}</span>
@@ -61,6 +62,21 @@
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.mainCategories.create','sub_category')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
+                    </li>
+                </ul>
+            </li>
+
+            {{--###########     Brands    ##################--}}
+            <li class="nav-item"><a href=""><i class="la la-check-circle"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/brands.brands')}}  </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.brands')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.brands.create')}}" data-i18n="nav.dash.crypto">{{__('admin/brands.addBrand')}}</a>
                     </li>
                 </ul>
             </li>

@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    @if($type === 'main_category')
-        {{$trans = 'main'}}
-    @elseif($type === 'sub_category')
-        {{$trans = 'sub'}}
-    @endif
-
-
-
-
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-header row">
@@ -23,7 +13,7 @@
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.mainCategories',$type)}}">{{__('admin/categories.'.$trans.'Categories')}}</a>
+                                        href="{{route('admin.mainCategories',$type)}}">{{__('admin/categories.'.type($type).'Categories')}}</a>
                                 </li>
                                 <li class="breadcrumb-item active">{{__('admin/categories.add')}}
                                 </li>
@@ -40,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/categories.'.$trans.'Add')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/categories.'.type($type).'Add')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -78,7 +68,7 @@
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/categories.'.$trans.'Data')}}
+                                                        class="ft-home"></i> {{__('admin/categories.'.type($type).'Data')}}
                                                 </h4>
                                                 @if($type === 'sub_category')
                                                     <div class="row">
