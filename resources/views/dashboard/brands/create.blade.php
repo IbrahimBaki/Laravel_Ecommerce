@@ -52,7 +52,6 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
-{{--                                            <input type="hidden" value="" name="type">--}}
                                             <div class="form-group">
                                                 <label>{{__('admin/brands.brandPhoto')}}</label>
                                                 <label id="projectinput7" class="file center-block">

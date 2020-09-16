@@ -44,6 +44,7 @@ Route::group([
             Route::put('{type}/update/{id}', 'MainCategoriesController@update')->name('admin.mainCategories.update');
             Route::get('{type}/delete/{id}', 'MainCategoriesController@delete')->name('admin.mainCategories.delete');
         });
+        #################################### Brands routes ###############################################
         Route::group(['prefix' => 'brands'], function () {
             Route::get('/', 'BrandsController@index')->name('admin.brands');
             Route::get('{create', 'BrandsController@create')->name('admin.brands.create');
