@@ -4,32 +4,22 @@ return [
 
     'main' => 'Main',
 
-    'mainCategories' => 'Main Categories',
-    'subCategories' => 'Sub-Categories',
-
+    'categories' => 'Categories',
 ############ Edit & Create  Pages #################
-    'mainEdit' => 'Edit Main Categories',
-    'subEdit' => ' edit sub-categories',
-
-    'mainData' => 'Category Information',
-    'subData' => 'Sub-Category Information',
-
-    'mainAdd' => 'Add New Category',
-    'subAdd' => 'Add New Sub-Category',
-
+    'catEdit' => 'Edit Categories',
+    'data' => 'Category Information',
+    'catAdd' => 'Add New Category',
     'catName' => 'Category Name',
     'cancel' => 'Cancel',
     'save' => 'Save',
     'add' => 'Add',
-    'parent' => 'Main Category',
+    'parent' => 'Parent Category',
 
 ################## Index Page ##########################
 
-    'mainAll' => 'All Main Categories',
-    'subAll' => 'All Sub Categories',
-
+    'all' => 'All Categories',
     'name' => 'Name',
-    'linkName' => 'Slug',
+    'slug' => 'Slug',
     'status' => 'Status',
     'categoryPhoto' => 'Category Photo',
     'operations' => 'Operations',
