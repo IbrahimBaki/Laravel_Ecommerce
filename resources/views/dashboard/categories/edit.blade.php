@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
                                 </li>
 
-                                <li class="breadcrumb-item active"><a href="{{route('admin.mainCategories',$type)}}">{{__('admin/categories.'.type($type).'Categories')}}</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.categories')}}">{{__('admin/categories.categories')}}</a>
                                 </li>
                                 <li class="breadcrumb-item active">{{__('admin/categories.edit')}}
                                 </li>
@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/categories.'.type($type).'Edit')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/categories.catEdit')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -45,14 +45,14 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.mainCategories.update',[$type,$category->id])}}"
+                                              action="{{route('admin.categories.update',$category->id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
 
                                             <input type="hidden" name="id" value="{{$category -> id}}">
-                                            <input type="hidden" value="{{ $type }}" name="type">
+
 
                                             <div class="form-group">
                                                 <div class="text-center">
@@ -78,10 +78,10 @@
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/categories.'.type($type).'Data')}}
+                                                        class="ft-home"></i> {{__('admin/categories.data')}}
                                                 </h4>
-                                                @if($type === 'sub_category')
-                                                    <div class="row">
+
+                                                    <div class="row hidden" id="cats_list">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label
@@ -90,7 +90,7 @@
                                                                 <select name="parent_id"
                                                                         id="parent_id"
                                                                         class="form-control">
-                                                                    <optgroup label="{{__('admin/categories.mainCategories')}}">
+                                                                    <optgroup label="{{__('admin/categories.categories')}}">
                                                                         @if($categories && $categories->count()>0)
                                                                             @foreach($categories as $cat)
                                                                                 <option @if($category->parent_id == $cat->id) selected @endif
@@ -105,7 +105,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @endif
+
 
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -127,7 +127,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.linkName')}} </label>
+                                                                for="projectinput1"> {{__('admin/categories.slug')}} </label>
                                                             <input type="text"
                                                                    value="{{$category -> slug}}"
                                                                    id="slug"
@@ -160,6 +160,38 @@
                                                             @enderror
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group mt-1">
+                                                            <input type="radio"
+                                                                   name="type"
+                                                                   value="1"
+                                                                   class="switchery"
+                                                                   data-color="success"
+                                                                   @if($category->parent_id == null)checked @endif
+                                                            />
+                                                            <label
+                                                                class="card-title ml-1">
+                                                                قسم رئيسي
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group mt-1">
+                                                            <input type="radio"
+                                                                   name="type"
+                                                                   value="2"
+                                                                   class="switchery"
+                                                                   data-color="success"
+                                                                   @if($category->parent_id !== null)checked @endif
+                                                            />
+                                                            <label
+                                                                class="card-title ml-1">
+                                                                قسم فرعي
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
 
 
                                                 </div>
@@ -188,4 +220,18 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('script')
+
+    <script>
+        $('input:radio[name="type"]').change(
+            function () {
+                if (this.checked && this.value == '2') {  // 1 if main cat - 2 if sub cat
+                    $('#cats_list').removeClass('hidden');
+                } else {
+                    $('#cats_list').addClass('hidden');
+                }
+            });
+    </script>
 @stop

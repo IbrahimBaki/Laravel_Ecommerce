@@ -5,9 +5,9 @@ return [
 
     'success' => ' Saved Successfully ',
     'error' => 'Something Wrong !! Try again Later ',
-    'missId'=> 'Missed Category',
-    'deletedSuccess'=>' Category Deleted Successfully',
-    'created'=>'Category Created Successfully',
+    'missId'=> 'Missed element',
+    'deleted'=>'Deleted Successfully',
+    'created'=>'Created Successfully',
     'brandCreated'=>'Brand Created Successfully',
 
 
