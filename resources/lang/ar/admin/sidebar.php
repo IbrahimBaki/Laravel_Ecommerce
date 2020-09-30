@@ -14,29 +14,26 @@ return [
 
 ///////////// Main Page ////////////////////////
 
-'home' =>'الرئيسية',
+    'home' => 'الرئيسية',
+    'products' => 'المنتجات',
+    'addProduct' => 'اضافة منتج',
 
 
 ///////////// settings /////////////////////////
-    'languages'=>'اختر اللغة',
-    'showAll' =>'عرض الكل',
-    'addLanguage' =>'اضافة لغة جديدة',
+    'languages' => 'اختر اللغة',
+    'showAll' => 'عرض الكل',
+    'addLanguage' => 'اضافة لغة جديدة',
 
-    'addCategory' =>'اضافة قسم جديد',
-    'subCategories'=>'الاقسام الفرعية',
-
-
+    'addCategory' => 'اضافة قسم جديد',
+    'subCategories' => 'الاقسام الفرعية',
 
 
     //////////////////////////////////////
-    'settings'          =>'الاعدادات',
-    'shipping methods'  =>'وسائل التوصيل',
-    'free shipping'     =>'توصيل مجاني',
-    'local pickup'      =>'توصيل داخلي',
-    'flat rate'         =>'توصيل خارجي',
-
-
-
+    'settings' => 'الاعدادات',
+    'shipping methods' => 'وسائل التوصيل',
+    'free shipping' => 'توصيل مجاني',
+    'local pickup' => 'توصيل داخلي',
+    'flat rate' => 'توصيل خارجي',
 
 
 ];

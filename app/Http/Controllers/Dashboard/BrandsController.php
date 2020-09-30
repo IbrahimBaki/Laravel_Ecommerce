@@ -84,6 +84,8 @@ class BrandsController extends Controller
         try{
             $brand = Brand::find($id);
             $this->checkExists($brand);
+
+            $brand->translations()->delete();
             $brand->delete();
             return redirect()->route('admin.brands')->with(['success' => __('admin/messages.deleted')]);
 

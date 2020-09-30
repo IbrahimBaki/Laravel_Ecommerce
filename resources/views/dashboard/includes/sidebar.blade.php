@@ -98,50 +98,21 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">المتاجر  </span>
+            {{--###########     Products    ##################--}}
+            <li class="nav-item"><a href=""><i class="la la-shopping-cart"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.products')}}  </span>
                     <span
-                        class="badge badge badge-success badge-pill float-right mr-2"></span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.tags')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            متجر  </a>
+                    <li><a class="menu-item" href="{{route('admin.products.general.create')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addProduct')}}</a>
                     </li>
                 </ul>
             </li>
 
-
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الطلاب  </span>
-                    <span
-                        class="badge badge badge-warning  badge-pill float-right mr-2"></span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
-                    </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            طالب </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item">
-                <a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">تذاكر المواصلات   </span>
-                    <span
-                        class="badge badge badge-danger  badge-pill float-right mr-2">0</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce">  تذاكر الطلاب </a>
-                    </li>
-                </ul>
-            </li>
 
 
             <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title"

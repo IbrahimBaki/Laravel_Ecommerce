@@ -14,25 +14,26 @@ return [
 
 ///////////// Main Page ////////////////////////
 
-    'home' =>'Home',
+    'home' => 'Home',
+    'products' =>'Products',
+    'addProduct' =>'Add Products',
 
 
 ///////////// settings /////////////////////////
 
-    'languages'=>'Select Language',
-    'showAll' =>'Show All',
-    'addLanguage' =>'Add New Language',
+    'languages' => 'Select Language',
+    'showAll' => 'Show All',
+    'addLanguage' => 'Add New Language',
 
-    'addCategory' =>'Add New Category',
-    'subCategories'=>'Sub Categories',
+    'addCategory' => 'Add New Category',
+    'subCategories' => 'Sub Categories',
 
 
-
-    'settings'          =>'Settings',
-    'shipping methods'  =>'Shipping Methods',
-    'free shipping'     =>'Free Shipping',
-    'local pickup'      =>'Local Pickup',
-    'flat rate'         =>'Flat Rate',
+    'settings' => 'Settings',
+    'shipping methods' => 'Shipping Methods',
+    'free shipping' => 'Free Shipping',
+    'local pickup' => 'Local Pickup',
+    'flat rate' => 'Flat Rate',
 
 
 ];
