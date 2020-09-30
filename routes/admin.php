@@ -37,12 +37,12 @@ Route::group([
 
         #################################### Main-categories routes ###############################################
         Route::group(['prefix' => 'categories'], function () {
-            Route::get('/', 'categoriesController@index')->name('admin.categories');
-            Route::get('create', 'categoriesController@create')->name('admin.categories.create');
-            Route::post('store', 'categoriesController@store')->name('admin.categories.store');
-            Route::get('edit/{id}', 'categoriesController@edit')->name('admin.categories.edit');
-            Route::put('update/{id}', 'categoriesController@update')->name('admin.categories.update');
-            Route::get('delete/{id}', 'categoriesController@delete')->name('admin.categories.delete');
+            Route::get('/', 'CategoriesController@index')->name('admin.categories');
+            Route::get('create', 'CategoriesController@create')->name('admin.categories.create');
+            Route::post('store', 'CategoriesController@store')->name('admin.categories.store');
+            Route::get('edit/{id}', 'CategoriesController@edit')->name('admin.categories.edit');
+            Route::put('update/{id}', 'CategoriesController@update')->name('admin.categories.update');
+            Route::get('delete/{id}', 'CategoriesController@delete')->name('admin.categories.delete');
         });
         #################################### Brands routes ###############################################
         Route::group(['prefix' => 'brands'], function () {
@@ -61,6 +61,13 @@ Route::group([
             Route::get('edit/{id}', 'TagsController@edit')->name('admin.tags.edit');
             Route::put('update/{id}', 'TagsController@update')->name('admin.tags.update');
             Route::get('delete/{id}', 'TagsController@delete')->name('admin.tags.delete');
+        });
+        #################################### Products routes ###############################################
+        Route::group(['prefix' => 'products'], function () {
+            Route::get('/', 'ProductsController@index')->name('admin.products');
+            Route::get('general-information', 'ProductsController@create')->name('admin.products.general.create');
+            Route::post('store-general-information', 'ProductsController@store')->name('admin.products.general.store');
+
         });
     });
 
