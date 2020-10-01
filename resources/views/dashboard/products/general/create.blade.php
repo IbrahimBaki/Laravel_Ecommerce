@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
@@ -121,7 +120,7 @@
                                                                 for="projectinput1"> {{__('admin/products.productDescription')}} </label>
                                                             <input type="text"
                                                                    value="{{old('description')}}"
-                                                                   id="txtEditor"
+                                                                   id="description"
                                                                    class="form-control"
                                                                    placeholder=""
                                                                    name="description">
@@ -129,6 +128,7 @@
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
+
 
                                                     </div>
                                                 </div>
@@ -168,7 +168,7 @@
 
                                                             <select name="tags[]"
                                                                     id="tag"
-                                                                    class="select2 form-control">
+                                                                    class="select2 form-control" multiple>
                                                                 <optgroup
                                                                     label="{{__('admin/tags.tags')}}">
                                                                     @if($data['tags'] && $data['tags']->count()>0)
@@ -254,3 +254,4 @@
         </div>
     </div>
 @stop
+

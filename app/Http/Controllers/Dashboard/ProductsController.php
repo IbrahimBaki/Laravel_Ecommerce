@@ -7,16 +7,19 @@ use App\Http\Requests\GeneralProductRequest;
 use App\Http\Requests\MainCategoryRequest;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Tag;
-use App\Traits\CategoryTrait;
+use App\Traits\ProductTrait;
 use DB;
 
 class ProductsController extends Controller
 {
-    use CategoryTrait;
+    use ProductTrait;
 
     public function index()
     {
+        $products = Product::select('id','slug','price','created_at')->paginate(PAGINATION_COUNT);
+        return view('dashboard.products.general.index',compact('products'));
 
 
     }
@@ -36,29 +39,39 @@ class ProductsController extends Controller
     public function store(GeneralProductRequest $request)
     {
 
-/*
-//        try {
 
-//            DB::beginTransaction();
+       try {
+
+            DB::beginTransaction();
         $this->checkStatus($request);
-        if ($request->type == 1) //main category
-        {
-            $request->request->add(['parent_id' => null]);
+    //Save main table
+        $product = Product::create([
+            'brand_id'=>$request->brand_id,
+            'slug'=>$request->slug,
+            'is_active'=>$request->is_active,
+        ]);
+        // Save Translations
+        $product->name = $request->name;
+        $product->description = $request->name;
+        $product->short_description = $request->name;
+        $product->save();
+
+        //Save Product Categories
+           $product->categories()->attach($request->categories);
+
+        //Save Product Tags
+           $product->tags()->attach($request->tags);
+
+            DB::commit();
+
+        return redirect()->back()->with(['success' => __('admin/messages.created')]);
+
+
+        } catch (\Exception $ex) {
+            DB::rollback();
+            return redirect()->route('admin.categories')->with(['error' => __('admin.messages.error')]);
         }
 
-        $cat = Category::create($request->except('_token'));
-
-//            DB::commit();
-        $id = $cat->id;
-
-        return redirect('/ar/admin/categories/edit/' . $id)->with(['success' => __('admin/messages.created')]);
-
-
-//        } catch (\Exception $ex) {
-//            DB::rollback();
-//            return redirect()->route('admin.categories')->with(['error' => __('admin.messages.error')]);
-//        }
-*/
 
     }
 
