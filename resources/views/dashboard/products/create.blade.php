@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
+
 @section('content')
+
+
+
+
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-header row">
@@ -211,14 +216,5 @@
 @stop
 @section('script')
 
-    <script>
-        $('input:radio[name="type"]').change(
-            function () {
-                if (this.checked && this.value == '2') {  // 1 if main cat - 2 if sub cat
-                    $('#cats_list').removeClass('hidden');
-                } else {
-                    $('#cats_list').addClass('hidden');
-                }
-            });
-    </script>
+
 @stop
