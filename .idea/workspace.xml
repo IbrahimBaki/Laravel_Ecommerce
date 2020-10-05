@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/ProductTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PriceProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_25_144431_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_25_144431_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/admin/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/admin/products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/prices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/prices/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,24 +150,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/products/general" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\app\Http\Requests" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\general" />
+      <recent name="C:\xampp\htdocs\ecommerce\app\Traits" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
       <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\general" />
-      <recent name="C:\xampp\htdocs\ecommerce\app\Traits" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard" />
     </key>
   </component>
   <component name="RunManager">
@@ -211,7 +215,10 @@
       <workItem from="1601108850802" duration="8000" />
       <workItem from="1601109245143" duration="16636000" />
       <workItem from="1601282797507" duration="15472000" />
-      <workItem from="1601439875107" duration="15649000" />
+      <workItem from="1601439875107" duration="15841000" />
+      <workItem from="1601722161936" duration="15667000" />
+      <workItem from="1601803227796" duration="8911000" />
+      <workItem from="1601909386774" duration="1765000" />
     </task>
     <servers />
   </component>
@@ -232,11 +239,11 @@
       <screen x="1366" y="-152" width="1680" height="1010" />
     </state>
     <state x="1936" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1600305405266" />
-    <state x="1942" y="108" key="FileChooserDialogImpl" timestamp="1600224463927">
+    <state x="1942" y="108" key="FileChooserDialogImpl" timestamp="1601734750598">
       <screen x="1366" y="-152" width="1680" height="1010" />
     </state>
     <state x="1846" y="260" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1598050476357" />
-    <state x="1942" y="108" key="FileChooserDialogImpl/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1600224463927" />
+    <state x="1942" y="108" key="FileChooserDialogImpl/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601734750598" />
     <state x="1842" y="228" key="NewPhpClassDialog" timestamp="1601014379798">
       <screen x="1366" y="0" width="1400" height="1010" />
     </state>
@@ -249,10 +256,10 @@
       <screen x="1366" y="-152" width="1680" height="1010" />
     </state>
     <state x="1862" y="157" key="run.anything.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597697472979" />
-    <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup" timestamp="1601441621776">
+    <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup" timestamp="1601724213624">
       <screen x="1366" y="-152" width="1680" height="1010" />
     </state>
     <state x="1864" y="319" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1601113485375" />
-    <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601441621776" />
+    <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601724213624" />
   </component>
 </project>

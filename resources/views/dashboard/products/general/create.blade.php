@@ -18,9 +18,20 @@
                                 </li>
                             </ol>
                         </div>
+                        <div>
+                            <a href=""
+                               class="btn btn-primary">General</a>
+                            <a href=""
+                            class="btn btn-primary">Price</a>
+                            <a href=""
+                               class="btn btn-primary">Photo</a>
+                            <a href=""
+                               class="btn btn-primary">Stock</a>
+                        </div>
                     </div>
                 </div>
             </div>
+{{--            --}}
             <div class="content-body">
                 <!-- Basic form layout section start -->
                 <section id="basic-form-layouts">
@@ -62,7 +73,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.productName')}} </label>
+                                                                for="name"> {{__('admin/products.productName')}} </label>
                                                             <input type="text"
                                                                    value="{{old('name')}}"
                                                                    id="name"
@@ -78,7 +89,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.slug')}} </label>
+                                                                for="slug"> {{__('admin/categories.slug')}} </label>
                                                             <input type="text"
                                                                    value="{{old('slug')}}"
                                                                    id="slug"
@@ -98,7 +109,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.short_description')}} </label>
+                                                                for="short_description"> {{__('admin/products.short_description')}} </label>
                                                             <input type="text"
                                                                    value="{{old('short_description')}}"
                                                                    id="short_description"
@@ -117,7 +128,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.productDescription')}} </label>
+                                                                for="description"> {{__('admin/products.productDescription')}} </label>
                                                             <input type="text"
                                                                    value="{{old('description')}}"
                                                                    id="description"
@@ -140,7 +151,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.category')}} </label>
+                                                                for="categories"> {{__('admin/products.category')}} </label>
 
                                                             <select name="categories[]"
                                                                     id="categories"
@@ -164,7 +175,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.tags')}} </label>
+                                                                for="tag"> {{__('admin/products.tags')}} </label>
 
                                                             <select name="tags[]"
                                                                     id="tag"
@@ -188,7 +199,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/products.brands')}} </label>
+                                                                for="brand_id"> {{__('admin/products.brands')}} </label>
 
                                                             <select name="brand_id"
                                                                     id="brand_id"
@@ -242,6 +253,7 @@
                                                         <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
                                                     </button>
                                                 </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -251,7 +263,10 @@
                 </section>
                 <!-- // Basic form layout section end -->
             </div>
+
         </div>
     </div>
+
+
 @stop
 

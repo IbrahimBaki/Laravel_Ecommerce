@@ -4,11 +4,11 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="nav-item active"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span
+            <li class="nav-item"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.home')}} </span></a>
             </li>
 
-            <li class="nav-item  open ">
+            <li class="nav-item">
                 <a href=""><i class="la la-language"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.languages')}} </span>
                     <span
@@ -17,7 +17,7 @@
                 <ul class="menu-content">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
-                    <li class="active">
+                    <li class="">
 
                         <a class="menu-item" data-i18n="nav.dash.ecommerce" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                             {{ $properties['native'] }}
@@ -27,7 +27,7 @@
                 </ul>
 
                 <ul class="menu-content">
-                    <li class="active">
+                    <li class="">
                         <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li>
@@ -43,7 +43,7 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.categories')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.categories')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}}</a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.categories.create')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
@@ -75,7 +75,7 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.brands')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.brands')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.brands.create')}}" data-i18n="nav.dash.crypto">{{__('admin/brands.addBrand')}}</a>
@@ -90,7 +90,7 @@
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.tags')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.tags')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">{{__('admin/tags.addTag')}}</a>
@@ -102,10 +102,10 @@
             <li class="nav-item"><a href=""><i class="la la-shopping-cart"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.products')}}  </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Product::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.products')}}"
+                    <li class=""><a class="menu-item" href="{{route('admin.products')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
                     </li>
                     <li><a class="menu-item" href="{{route('admin.products.general.create')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addProduct')}}</a>
