@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralProductRequest;
 use App\Http\Requests\MainCategoryRequest;
+use App\Http\Requests\PriceProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Traits\ProductTrait;
+use http\Env\Request;
 use DB;
 
 class ProductsController extends Controller
@@ -18,7 +20,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::select('id','slug','price','created_at')->paginate(PAGINATION_COUNT);
+        $products = Product::select('id','slug','price','created_at')->paginate(10);
         return view('dashboard.products.general.index',compact('products'));
 
 
@@ -41,6 +43,19 @@ class ProductsController extends Controller
 
 
        try {
+           /*
+             if($offer){
+       return response()->json([
+           'status'=>true,
+           'msg'=>'stored successfully',
+       ]);}
+        else{
+            return response()->json([
+                'status'=>false,
+                'msg'=>'store failed',
+            ]);
+        }
+           */
 
             DB::beginTransaction();
         $this->checkStatus($request);
@@ -61,10 +76,9 @@ class ProductsController extends Controller
 
         //Save Product Tags
            $product->tags()->attach($request->tags);
-
+            $id = $product->id;
             DB::commit();
-
-        return redirect()->back()->with(['success' => __('admin/messages.created')]);
+        return redirect()->route('admin.products.price',compact('id'))->with(['success' => __('admin/messages.created')]);
 
 
         } catch (\Exception $ex) {
@@ -73,6 +87,25 @@ class ProductsController extends Controller
         }
 
 
+    }
+
+    public function getPrice($id)
+    {
+        return view('dashboard.products.prices.create',compact('id'));
+
+
+    }
+
+    public function savePrice(PriceProductRequest $request)
+    {
+//        try {
+            Product::whereId($request->id)->update($request->except('id','_token'));
+            $id = $request->id;
+            return view('dashboard.products.prices.create',compact('id'))->with(['success'=>__('admin/messages.created')]);
+
+//        }catch(\Exception $ex){
+//            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
+//        }
     }
 
     public function edit($id)
