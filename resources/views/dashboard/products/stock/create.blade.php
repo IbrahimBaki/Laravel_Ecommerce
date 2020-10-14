@@ -47,7 +47,7 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.products.price.store')}}"
+                                              action="{{route('admin.products.stock.store')}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
@@ -55,106 +55,83 @@
                                             <input type="hidden" value="{{$id}}" name="id">
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/products.priceData')}}
+                                                <h4 class="form-section"><i class="ft-home"></i> {{__('admin/products.stockData')}}
                                                 </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="price"> {{__('admin/products.productPrice')}} </label>
-                                                            <input type="number"
-                                                                   value="{{$product->price ?? old('price')}}"
-                                                                   id="price"
+                                                            <label for="sku"> {{__('admin/products.sku')}} </label>
+                                                            <input type="text"
+                                                                   @isset($product)
+                                                                   value="{{$product->sku ?? old('sku')}}"
+                                                                   @endisset
+                                                                   id="sku"
                                                                    class="form-control"
                                                                    placeholder=""
-                                                                   name="price">
-                                                            @error("price")
+                                                                   name="sku">
+                                                            @error("sku")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="in_stock"> {{__('admin/products.productStatus')}} </label>
+                                                            <select name="in_stock" class="select2 form-control" id="in_stock" >
+                                                                <optgroup label="">
+                                                                    <option  @isset($product) @if($product->in_stock == 1) selected @endif @endisset
+                                                                        value="1">{{__('admin/products.avail')}}</option>
+                                                                    <option @isset($product) @if($product->in_stock == 0) selected @endif @endisset
+                                                                    value="0" >{{__('admin/products.nonAvail')}}</option>
+                                                                </optgroup>
+                                                            </select>
+                                                            @error("in_stock")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="special_price"> {{__('admin/categories.productSpecialPrice')}} </label>
-                                                            <input type="number"
-                                                                   value="{{$product->special_price ?? old('special_price')}}"
-                                                                   id="special_price"
-                                                                   class="form-control"
-                                                                   placeholder=""
-                                                                   name="special_price">
-                                                            @error("special_price")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
 
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="special_price_type"> {{__('admin/products.specialPriceType')}} </label>
-                                                            <select name="special_price_type"
-                                                                    class="form-control"
-                                                                    id="special_price_type"
-                                                            >
-                                                                <optgroup label="choose Type">
-                                                                    <option @isset($product) @if($product->special_price_type == 'percent') selected @endif @endisset
-                                                                        value="percent">Percent</option>
-                                                                    <option
-                                                                        @isset($product) @if($product->special_price_type == 'fixed') selected @endif @endisset
-                                                                        value="fixed">Fixed</option>
+                                                            <label for="manage_stock"> {{__('admin/products.stockFollow')}} </label>
+                                                            <select name="manage_stock" class="select2 form-control" id="manage_stock" >
+                                                                <optgroup label="">
+                                                                    <option @isset($product) @if($product->in_stock == 1) selected @endif @endisset
+                                                                    value="1">{{__('admin/products.allow')}}</option>
+                                                                    <option @isset($product) @if($product->in_stock == 0) selected @endif @endisset
+                                                                    value="0" >{{__('admin/products.disallow')}}</option>
                                                                 </optgroup>
                                                             </select>
-                                                            @error("special_price_type")
+                                                            @error("manage_stock")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-6 " @isset($product) @if($product->in_stock == 0) style="display: none" @endif @endisset id="qty" >
+                                                        <div class="form-group">
+                                                            <label for="qty"> {{__('admin/products.qty')}} </label>
+                                                            <input type="number"
+                                                                   @isset($product)
+                                                                   value="{{$product->qty ?? old('qty')}}"
+                                                                   @endisset
+                                                                   id="qty"
+                                                                   class="form-control"
+                                                                   placeholder=""
+                                                                   name="qty">
+                                                            @error("qty")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
                                                 </div>
 
-                                               <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="special_price_start">{{__('admin/products.specialPriceStart')}}</label>
-                                                            <input type="date"
-                                                                   name="special_price_start"
-                                                                   id="special_price_start"
-                                                                   class="form-control"
-                                                                   @isset($product)
-                                                                   value="{{date('Y-m-d',strtotime($product->special_price_start)) ?? old('special_price_start')}}"
-                                                                   @endisset
-                                                                   placeholder=""
-                                                            >
-                                                            @error("special_price_start")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label
-                                                                for="special_price_end">{{__('admin/products.specialPriceEnd')}}</label>
-                                                            <input type="date"
-                                                                   name="special_price_end"
-                                                                   id="special_price_end"
-                                                                   class="form-control"
-                                                                   @isset($product)
-                                                                   value="{{date('Y-m-d',strtotime($product->special_price_end)) ?? old('special_price_end')}}"
-                                                                   @endisset
-                                                                   placeholder=""
-
-                                                            >
-                                                            @error("special_price_end")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                               </div>
                                             </div>
 
 
@@ -182,5 +159,18 @@
     </div>
 
 
+@stop
+@section('script')
+    <script>
+        $(document).on('change','#manage_stock',function (){
+           if($(this).val() == 1){
+               $('#qty').show();
+           }else{
+               $('#qty').hide();
+           }
+
+        });
+
+    </script>
 @stop
 

@@ -18,6 +18,17 @@ return [
     'specialPriceType' => 'نوع الخصم',
     'specialPriceStart' => 'تاريخ بداية الخصم',
     'specialPriceEnd' => 'تاريخ نهاية الخصم',
+######### stock Page ############
+    'stockData' => 'ادارة المستودع',
+    'sku' => 'كود المنتج',
+    'stockFollow' => 'تتبع المستودع',
+    'allow'=>'السماح',
+    'disallow'=>'عدم السماح',
+    'avail'=>'متاح',
+    'nonAvail'=>'غير متاح',
+    'productStatus'=>'حالة المنتج',
+    'qty'=>'كمية المنتج',
+
 
 
     ########## Index Page #############
@@ -26,5 +37,12 @@ return [
     'slug' => 'الاسم بالرابط',
     'status' => 'الحالة',
     'operations' => 'الاجراءات',
+    'edit' => 'تعديل',
+    'desc' => 'الوصف',
+    'price' => 'السعر',
+    'stock' => 'المخزن',
+    'images' => 'الصور',
+    'delete' => 'حذف',
+
 
 ];

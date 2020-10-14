@@ -57,12 +57,12 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.products.general.store')}}"
+                                              action="{{route('admin.products.general.update',$product->id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input type="hidden" value="" name="id">
+                                            <input type="hidden" value="{{$product->id}}" name="id">
 
                                             <div class="form-body">
                                                 <h4 class="form-section"><i
@@ -75,7 +75,7 @@
                                                             <label
                                                                 for="name"> {{__('admin/products.productName')}} </label>
                                                             <input type="text"
-                                                                   value="{{old('name')}}"
+                                                                   value="{{$product->name}}"
                                                                    id="name"
                                                                    class="form-control"
                                                                    placeholder=""
@@ -91,7 +91,7 @@
                                                             <label
                                                                 for="slug"> {{__('admin/categories.slug')}} </label>
                                                             <input type="text"
-                                                                   value="{{old('slug')}}"
+                                                                   value="{{$product->slug}}"
                                                                    id="slug"
                                                                    class="form-control"
                                                                    placeholder=""
@@ -111,7 +111,7 @@
                                                             <label
                                                                 for="short_description"> {{__('admin/products.short_description')}} </label>
                                                             <input type="text"
-                                                                   value="{{old('short_description')}}"
+                                                                   value="{{$product->short_description}}"
                                                                    id="short_description"
                                                                    class="form-control"
                                                                    placeholder=""
@@ -125,12 +125,13 @@
                                                 </div>
 
                                                 <div class="row">
+
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label
                                                                 for="ckeditor"> {{__('admin/products.productDescription')}} </label>
                                                             <textarea name="description" id="ckeditor" cols="30" rows="15"
-                                                                      class="ckeditor"></textarea>
+                                                                      class="ckeditor"> {{$product->description}}</textarea>
 
                                                             @error("description")
                                                             <span class="text-danger">{{$message}}</span>
@@ -152,14 +153,19 @@
 
                                                             <select name="categories[]"
                                                                     id="categories"
-                                                                    class="select2 form-control" multiple>
+                                                                    class="select2 form-control"
+                                                                    multiple>
                                                                 <optgroup
                                                                     label="{{__('admin/categories.categories')}}">
                                                                     @if($data['categories'] && $data['categories']->count()>0)
                                                                         @foreach($data['categories'] as $category)
                                                                             <option
+                                                                                @foreach($product->categories as $prCt)
+                                                                              @if($prCt->id == $category->id) selected @endif
+                                                                                @endforeach
                                                                                 value="{{$category->id}}">{{$category->name}}
                                                                             </option>
+
                                                                         @endforeach
                                                                     @endif
                                                                 </optgroup>
@@ -176,12 +182,16 @@
 
                                                             <select name="tags[]"
                                                                     id="tag"
-                                                                    class="select2 form-control" multiple>
+                                                                    class="select2 form-control"
+                                                                    multiple>
                                                                 <optgroup
                                                                     label="{{__('admin/tags.tags')}}">
                                                                     @if($data['tags'] && $data['tags']->count()>0)
                                                                         @foreach($data['tags'] as $tag)
                                                                             <option
+                                                                                @foreach($product->tags as $prTg)
+                                                                                @if($prTg->id == $tag->id) selected @endif
+                                                                                @endforeach
                                                                                 value="{{$tag->id}}">{{$tag->name}}
                                                                             </option>
                                                                         @endforeach
@@ -200,12 +210,13 @@
 
                                                             <select name="brand_id"
                                                                     id="brand_id"
-                                                                    class="form-control">
+                                                                    class="form-control"
+                                                                    data-value="{{$product->brand_id}}">
                                                                 <optgroup
                                                                     label="{{__('admin/brands.brands')}}">
                                                                     @if($data['brands'] && $data['brands']->count()>0)
                                                                         @foreach($data['brands'] as $brand)
-                                                                            <option
+                                                                            <option @if($product->brand_id == $brand->id) selected @endif
                                                                                 value="{{$brand->id}}">{{$brand->name}}
                                                                             </option>
                                                                         @endforeach
@@ -228,7 +239,8 @@
                                                                    class="switchery"
                                                                    name="is_active"
                                                                    data-color="success"
-                                                                   checked>
+                                                                   @if($product->is_active == 1)checked @endif
+                                                            >
                                                             <label for="switcheryColor4"
                                                                    class="card-title ml-1">{{__('admin/categories.status')}}</label>
                                                             @error("is_active")
@@ -266,7 +278,9 @@
 
 
 @stop
+
 @section('script')
     <script src="{{asset('assets/admin/vendors/js/editors/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/admin/js/scripts/editors/editor-ckeditor.js')}}" type="text/javascript"></script>
 @stop
+

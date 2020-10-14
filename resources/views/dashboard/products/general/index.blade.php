@@ -52,7 +52,8 @@
                                                 <th>{{__('admin/products.slug')}}</th>
                                                 <th> {{__('admin/products.status')}}</th>
                                                 <th>{{__('admin/products.productPrice')}}</th>
-                                                <th>{{__('admin/products.operations')}}</th>
+                                                <th>{{__('admin/products.edit')}}</th>
+                                                <th>{{__('admin/products.delete')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -65,18 +66,22 @@
                                                         <td>{{$product -> getActive()}}</td>
                                                         <td>{{$product -> price}}</td>
                                                         <td>
-                                                            <div class="btn-group" role="group"
-                                                                 aria-label="Basic example">
-                                                                <a href=""
-                                                                class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">السعر</a>
-                                                                <a href=""
-                                                                class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">الصور</a>
-                                                                <a href=""
-                                                                class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">المستودع</a>
-
-
-
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    edit
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item" href="{{route('admin.products.general.edit',$product->id)}}">الوصف</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.price.edit',$product->id)}}">السعر</a>
+                                                                    <a class="dropdown-item" href="#">الصور</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.stock.edit',$product->id)}}">المستودع</a>
+                                                                </div>
                                                             </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <a href=""
+                                                               class="btn btn-danger btn-min-width box-shadow-3 ">{{__('admin/products.delete')}}</a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

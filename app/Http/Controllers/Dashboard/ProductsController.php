@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralProductRequest;
 use App\Http\Requests\MainCategoryRequest;
 use App\Http\Requests\PriceProductRequest;
+use App\Http\Requests\StockProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Traits\ProductTrait;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use DB;
 
 class ProductsController extends Controller
@@ -43,42 +44,32 @@ class ProductsController extends Controller
 
 
        try {
-           /*
-             if($offer){
-       return response()->json([
-           'status'=>true,
-           'msg'=>'stored successfully',
-       ]);}
-        else{
-            return response()->json([
-                'status'=>false,
-                'msg'=>'store failed',
-            ]);
-        }
-           */
+
 
             DB::beginTransaction();
         $this->checkStatus($request);
     //Save main table
-        $product = Product::create([
+        $products = Product::create([
             'brand_id'=>$request->brand_id,
             'slug'=>$request->slug,
             'is_active'=>$request->is_active,
         ]);
         // Save Translations
-        $product->name = $request->name;
-        $product->description = $request->name;
-        $product->short_description = $request->name;
-        $product->save();
+        $products->name = $request->name;
+        $products->description = $request->description;
+        $products->short_description = $request->short_description;
+        $products->save();
 
         //Save Product Categories
-           $product->categories()->attach($request->categories);
+           $products->categories()->attach($request->categories);
 
         //Save Product Tags
-           $product->tags()->attach($request->tags);
-            $id = $product->id;
+           $products->tags()->attach($request->tags);
+            $id = $products->id;
+            $product = $products;
+
             DB::commit();
-        return redirect()->route('admin.products.price',compact('id'))->with(['success' => __('admin/messages.created')]);
+        return redirect()->route('admin.products.price',compact('id','product'))->with(['success' => __('admin/messages.created')]);
 
 
         } catch (\Exception $ex) {
@@ -89,6 +80,11 @@ class ProductsController extends Controller
 
     }
 
+
+
+
+
+
     public function getPrice($id)
     {
         return view('dashboard.products.prices.create',compact('id'));
@@ -98,51 +94,102 @@ class ProductsController extends Controller
 
     public function savePrice(PriceProductRequest $request)
     {
-//        try {
-            Product::whereId($request->id)->update($request->except('id','_token'));
+        try {
+            $product = Product::find($request->id);
+            $product->update($request->except('id','_token'));
             $id = $request->id;
-            return view('dashboard.products.prices.create',compact('id'))->with(['success'=>__('admin/messages.created')]);
+            return view('dashboard.products.stock.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
 
-//        }catch(\Exception $ex){
-//            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
-//        }
+        }catch(\Exception $ex){
+            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
+        }
     }
+
+
+
+
+    public function getStock($id)
+    {
+        return view('dashboard.products.stock.create',compact('id'));
+    }
+    public function saveStock(StockProductRequest $request)
+    {
+        try {
+            $product = Product::find($request->id);
+            $product->update($request->except('id','_token'));
+            $id = $request->id;
+            return view('dashboard.products.stock.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
+
+        }catch(\Exception $ex){
+            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
+        }
+
+    }
+
+
+
+
+
 
     public function edit($id)
     {
+        $product = Product::find($id);
 
-
-        $category = Category::orderBy('id', 'DESC')->find($id);
-        $this->checkExists($category);
-        $categories = Category::orderBy('id', 'DESC')->get();
-        return view('dashboard.categories.edit', compact('category', 'categories'));
-
-
+        $this->checkExists($product);
+        $data = [
+            'brands' => Brand::active()->select('id')->get(),
+            'tags'   => Tag::select('id')->get(),
+            'categories'   => Category::active()->select('id')->get(),
+        ];
+        return view('dashboard.products.general.edit', compact('product', 'data'));
     }
 
-    public function update(MainCategoryRequest $request, $id)
+    public function editPrice($id)
     {
-        try {
+        $product = Product::find($id);
+        $this->checkExists($product);
+        return view('dashboard.products.prices.create', compact('product','id'));
+    }
 
+    public function editStock($id)
+    {
+        $product = Product::find($id);
+        $this->checkExists($product);
+        return view('dashboard.products.stock.create', compact('product','id'));
+    }
+
+    public function update(GeneralProductRequest $request, $id)
+    {
+//        try {
+
+            $product = Product::find($id);
             DB::beginTransaction();
             $this->checkStatus($request);
-            $category = Category::find($id);
-            $this->checkExists($category);
-            if ($request->type == 1) //main category
-            {
-                $request->request->add(['parent_id' => null]);
+            //Save main table
+            $product ->update([
+                'brand_id'=>$request->brand_id,
+                'slug'=>$request->slug,
+                'is_active'=>$request->is_active,
+            ]);
+            // Save Translations
+            $product->name = $request->name;
+            $product->description = $request->description;
+            $product->short_description = $request->short_description;
+            $product->save();
 
-            }
-            $category->update($request->all());
-            $category->name = $request->name;
-            $category->save();
+            //Save Product Categories
+            $product->categories()->sync($request->categories);
+
+            //Save Product Tags
+            $product->tags()->sync($request->tags);
             DB::commit();
-            return redirect()->route('admin.categories')->with(['success' => __('admin/messages.success')]);
+            return view('dashboard.products.prices.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
 
-        } catch (\Exception $ex) {
-            DB::rollback();
-            return redirect()->route('admin.categories')->with(['error' => __('admin/messages.error')]);
-        }
+
+//        } catch (\Exception $ex) {
+//            DB::rollback();
+//            return redirect()->route('admin.products')->with(['error' => __('admin.messages.error')]);
+//        }
     }
 
     public function delete($id)

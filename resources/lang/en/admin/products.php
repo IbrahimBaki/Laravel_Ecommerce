@@ -20,6 +20,17 @@ return [
     'specialPriceStart' => 'Special Price Start Date',
     'specialPriceEnd' => 'Special Price End Date',
 
+    ######### stock Page ############
+    'stockData'=>'Stock Management',
+    'sku'=>'Product code',
+    'stockFollow'=>'Stock Following',
+    'allow'=>'Allow',
+    'disallow'=>'Not Allow',
+    'avail'=>'Available',
+    'nonAvail'=>'Not Available',
+    'productStatus'=>'Product Status',
+    'qty'=>'Product Quantity',
+
 
     ########## Index Page #############
     'allProducts' => 'All Products',
@@ -27,5 +38,11 @@ return [
     'slug' => 'Product Slug',
     'status' => 'Product status',
     'operations' => 'Operations',
+    'edit' => 'Edit',
+    'desc' => 'Description',
+    'price' => 'Price',
+    'stock' => 'Stock',
+    'images' => 'Images',
+    'delete' => 'Delete',
 
 ];
