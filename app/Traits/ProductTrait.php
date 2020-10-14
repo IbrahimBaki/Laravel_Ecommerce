@@ -8,11 +8,11 @@ use App\Models\Category;
 
 trait ProductTrait {
 
-    public function checkExists($category)
+    public function checkExists($product)
     {
 
-        if (!$category)
-            return redirect()->route('admin.mainCategories', compact('type'))->with(['error' => __('admin/categories.error')]);
+        if (!$product)
+            return redirect()->route('admin.products')->with(['error' => __('admin/csategories.error')]);
 
 
     }
