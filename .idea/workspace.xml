@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StockProductRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/products/stock/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/GeneralProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/GeneralProductRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/ProductTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/ProductTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/admin/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/admin/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_28_091905_create_product_images_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_161440_create_product_photos_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/prices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/prices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/prices/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/images/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/stock/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/stock/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,25 +150,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/products/general" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/products" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\general" />
-      <recent name="C:\xampp\htdocs\ecommerce\app\Http\Requests" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\stock" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
-      <recent name="C:\xampp\htdocs\ecommerce\app\Traits" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
       <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\general" />
+      <recent name="C:\xampp\htdocs\ecommerce\app\Http\Requests" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\stock" />
     </key>
   </component>
   <component name="RunManager">
@@ -223,6 +223,12 @@
       <workItem from="1602345958277" duration="5630000" />
       <workItem from="1602420747035" duration="4203000" />
       <workItem from="1602537959846" duration="702000" />
+      <workItem from="1602673643856" duration="10354000" />
+      <workItem from="1602779806146" duration="9494000" />
+      <workItem from="1603015560922" duration="1974000" />
+      <workItem from="1603117635735" duration="1425000" />
+      <workItem from="1603211663802" duration="13457000" />
+      <workItem from="1603309507105" duration="1666000" />
     </task>
     <servers />
   </component>

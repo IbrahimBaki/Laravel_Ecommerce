@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductImagesTable extends Migration
+class CreateStoreImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class CreateProductImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->unsigned();
+            $table->integer('imageable_id')->unsigned();
+            $table->string('imageable_type');
             $table->string('photo');
             $table->timestamps();
         });

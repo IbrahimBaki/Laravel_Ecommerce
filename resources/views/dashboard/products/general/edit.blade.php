@@ -52,6 +52,16 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href=""
+                                       class="btn btn-info">General</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Price</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Stock</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Photos</a>
+                                </div>
                                 @include('dashboard.includes.alerts.success')
                                 @include('dashboard.includes.alerts.errors')
                                 <div class="card-content collapse show">

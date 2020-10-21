@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralProductRequest;
-use App\Http\Requests\MainCategoryRequest;
+use App\Http\Requests\ImageProductRequest;
 use App\Http\Requests\PriceProductRequest;
 use App\Http\Requests\StockProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Traits\ProductTrait;
@@ -22,7 +23,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::select('id','slug','price','created_at')->paginate(10);
-        return view('dashboard.products.general.index',compact('products'));
+        return view('dashboard.products.index',compact('products'));
 
 
     }
@@ -127,6 +128,46 @@ class ProductsController extends Controller
     }
 
 
+    public function addImages($id)
+    {
+        return view('dashboard.products.images.create',compact('id'));
+    }
+
+//save Image to folder
+    public function saveImagesToFolder(Request $request)
+    {
+        $file = $request->file('dzfile');
+        $fileName = uploadImage('products',$file);
+
+        return response()->json([
+            'name' => $fileName,
+            'original_name'=> $file->getClientOriginalName(),
+        ]);
+    }
+
+    public function saveImagesToDB(ImageProductRequest $request)
+    {
+
+//        try{
+            //save dropzone images to db
+            if($request->has('document') && count($request->document) > 0 ){
+                foreach($request->document as $image){
+                    Image::create([
+                        'imageable_id'=>$request->product_id,
+                        'imageable_type'=>'App\Models\Products',
+                        'photo'=>$image,
+                    ]);
+                }
+            }
+
+            return redirect()->route('admin.products')->with(['success'=>'تم التحديث بنجاح']);
+
+//        }catch (\Exception $ex){
+//            return redirect()->route('admin.products')->with(['error'=>'هناك خطأ ما']);
+//        }
+
+    }
+
 
 
 
@@ -194,16 +235,23 @@ class ProductsController extends Controller
 
     public function delete($id)
     {
-        try {
+        $currentImage = Image::findOrFail($id);
 
-            $category = Category::find($id);
-            $this->checkExists($category);
-            $category->delete();
-            return redirect()->route('admin.categories')->with(['success' => __('admin/messages.deleted')]);
-
-        } catch (\Exception $ex) {
-            return redirect()->route('admin.categories')->with(['error' => __('admin/messages.error')]);
+        //validation to make sure that none can delete images except the person who upload them
+        if($currentImage->created_by != Auth::user()->id){ // created_by is founded in db
+            abort('403','You are not allowed to delete this Images');
         }
+
+        $images = $currentImage->images();
+        foreach ($currentImage->images as $image){
+            unlink(public_path($image->file_path)); // file_path is the directory of an images
+        }
+        $currentImage->images()->delete();
+        $currentImage->delete();
+
+        return redirect()->back();
+
+
 
     }
 }

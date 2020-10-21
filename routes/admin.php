@@ -79,6 +79,11 @@ Route::group([
             Route::get('edit-stock/{id}', 'ProductsController@editStock')->name('admin.products.stock.edit');
             Route::post('stock', 'ProductsController@saveStock')->name('admin.products.stock.store');
 
+            Route::get('images/{id}', 'ProductsController@addImages')->name('admin.products.images');
+            Route::get('edit-images/{id}', 'ProductsController@editImages')->name('admin.products.images.edit');
+            Route::post('images', 'ProductsController@saveImagesToFolder')->name('admin.products.images.store');
+            Route::post('images-db', 'ProductsController@saveImagesToDB')->name('admin.products.images.store.db');
+
         });
     });
 

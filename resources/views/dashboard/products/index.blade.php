@@ -73,8 +73,8 @@
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item" href="{{route('admin.products.general.edit',$product->id)}}">الوصف</a>
                                                                     <a class="dropdown-item" href="{{route('admin.products.price.edit',$product->id)}}">السعر</a>
-                                                                    <a class="dropdown-item" href="#">الصور</a>
                                                                     <a class="dropdown-item" href="{{route('admin.products.stock.edit',$product->id)}}">المستودع</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.images.edit',$product->id)}}">الصور</a>
                                                                 </div>
                                                             </div>
                                                         </td>

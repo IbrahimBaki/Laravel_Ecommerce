@@ -18,16 +18,6 @@
                                 </li>
                             </ol>
                         </div>
-                        <div>
-                            <a href=""
-                               class="btn btn-primary">General</a>
-                            <a href=""
-                            class="btn btn-primary">Price</a>
-                            <a href=""
-                               class="btn btn-primary">Photo</a>
-                            <a href=""
-                               class="btn btn-primary">Stock</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -51,6 +41,16 @@
                                             <li><a data-action="close"><i class="ft-x"></i></a></li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href=""
+                                       class="btn btn-info">General</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Price</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Stock</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">Photos</a>
                                 </div>
                                 @include('dashboard.includes.alerts.success')
                                 @include('dashboard.includes.alerts.errors')
