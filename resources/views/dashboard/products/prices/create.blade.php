@@ -45,10 +45,13 @@
                                 <div class="d-flex justify-content-center">
                                     <a href=""
                                        class="btn btn-outline-info">General</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
                                     <a href=""
                                        class="btn btn-info">Price</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
                                     <a href=""
                                        class="btn btn-outline-info">Stock</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
                                     <a href=""
                                        class="btn btn-outline-info">Photos</a>
                                 </div>

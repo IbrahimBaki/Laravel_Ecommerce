@@ -60,6 +60,10 @@ class Product extends Model
     {
         return $this->belongsToMany(Tag::class,'product_tags');
     }
+    public function images()
+    {
+        return $this->hasMany(Image::class,'imageable_id','id');
+    }
     public function getActive()
     {
         return $this->is_active == 0 ? __('admin/categories.notActive') : __('admin/categories.active') ;

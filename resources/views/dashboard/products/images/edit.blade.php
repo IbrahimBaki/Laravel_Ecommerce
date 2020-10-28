@@ -39,37 +39,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <a href=""
-                                       class="btn btn-outline-info">General</a>
-                                    <span class="la la-chevron-right" style="margin: 10px"></span>
-                                    <a href=""
-                                       class="btn btn-outline-info">Price</a>
-                                    <span class="la la-chevron-right" style="margin: 10px"></span>
-                                    <a href=""
-                                       class="btn btn-outline-info">Stock</a>
-                                    <span class="la la-chevron-right" style="margin: 10px"></span>
-                                    <a href=""
-                                       class="btn btn-info">Photos</a>
-                                </div>
                                 @include('dashboard.includes.alerts.success')
                                 @include('dashboard.includes.alerts.errors')
-
-
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        @isset($product)
-                                            <div class="row">
-                                            @foreach($product->images as $image)
-                                                <div class="col-md-1.5">
-                                                <img width="120px" height="150px" src="{{asset('assets/images/products/'.$image->photo)}}" alt="Product Images"><br>
-                                                    <form method="get" action="{{route('admin.products.images.delete',$image->id)}}" >
-                                                    <button type="submit" class="btn btn-danger btn-min-width box-shadow-3">delete</button>
-                                                    </form>
-                                                </div>
-                                            @endforeach
-                                            </div>
-                                        @endisset
                                         <form class="form"
                                               action="{{route('admin.products.images.store.db')}}"
                                               method="POST"

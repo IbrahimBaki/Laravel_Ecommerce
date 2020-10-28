@@ -15,6 +15,7 @@ use App\Models\Tag;
 use App\Traits\ProductTrait;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -119,7 +120,7 @@ class ProductsController extends Controller
             $product = Product::find($request->id);
             $product->update($request->except('id','_token'));
             $id = $request->id;
-            return view('dashboard.products.stock.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
+            return view('dashboard.products.images.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
 
         }catch(\Exception $ex){
             return redirect()->back()->with(['error'=>__('admin.messages.error')]);
@@ -199,6 +200,13 @@ class ProductsController extends Controller
         return view('dashboard.products.stock.create', compact('product','id'));
     }
 
+    public function editImage($id)
+    {
+        $product = Product::find($id);
+        $this->checkExists($product);
+        return view('dashboard.products.images.create', compact('product','id'));
+    }
+
     public function update(GeneralProductRequest $request, $id)
     {
 //        try {
@@ -233,7 +241,7 @@ class ProductsController extends Controller
 //        }
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $currentImage = Image::findOrFail($id);
 
@@ -249,6 +257,15 @@ class ProductsController extends Controller
         $currentImage->images()->delete();
         $currentImage->delete();
 
+        return redirect()->back();
+    }
+
+    public function imgDelete($id)
+    {
+        $image = Image::find($id);
+        $this->checkExists($image);
+        Storage::disk('products')->delete($image->photo);
+        $image->delete();
         return redirect()->back();
 
 

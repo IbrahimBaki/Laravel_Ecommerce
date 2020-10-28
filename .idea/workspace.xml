@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/store.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/cart.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/includes/alerts/errors.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/includes/alerts/success.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/includes/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/includes/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/includes/sidebar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/product_details.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/products.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/products/images/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/general/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/general/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/images/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/images/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/prices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/prices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/products/stock/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/products/stock/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,25 +147,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/products/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\user" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\layouts" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
       <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\user" />
-      <recent name="C:\xampp\htdocs\ecommerce\public\assets" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\layouts" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -233,7 +230,7 @@
       <workItem from="1603634782705" duration="2290000" />
       <workItem from="1603826171975" duration="4544000" />
       <workItem from="1603889732896" duration="14498000" />
-      <workItem from="1603905993666" duration="3765000" />
+      <workItem from="1603905993666" duration="10162000" />
     </task>
     <servers />
   </component>
