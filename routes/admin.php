@@ -92,6 +92,9 @@ Route::group([
         Route::get('/login', 'LoginController@loginPage')->name('admin.login');
         Route::post('/login', 'LoginController@postLogin')->name('admin.post.login');
     });
+    Route::get('product/details',function (){
+        return view('user.product_details');
+    });
 
 
 });
