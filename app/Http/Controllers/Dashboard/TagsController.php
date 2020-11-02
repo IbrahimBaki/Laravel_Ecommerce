@@ -51,7 +51,10 @@ class TagsController extends Controller
         $tags = Tag::find($id);
         if (!$tags)
             return redirect()->route('admin.tags')->with(['error' => __('admin/messages.error')]);
-        $tags->update(['name'=>$request->name,'slug'=>$request->slug]);
+
+        $tags->update(['slug'=>$request->slug]);
+        $tags->name = $request->name;
+        $tags->save();
         return redirect()->route('admin.tags')->with(['success' => __('admin/messages.success')]);
 
     }

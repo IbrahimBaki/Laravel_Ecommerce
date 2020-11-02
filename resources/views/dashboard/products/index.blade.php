@@ -5,14 +5,14 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> {{__('admin/products.products')}} </h3>
+                    <h3 class="content-header-title"> {{__('admin/general.products')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/categories.main')}}</a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active"> {{__('admin/products.products')}}
+                                <li class="breadcrumb-item active"> {{__('admin/general.products')}}
                                 </li>
                             </ol>
                         </div>
@@ -48,12 +48,12 @@
                                             class="table display nowrap table-striped table-bordered scroll-horizontal">
                                             <thead class="">
                                             <tr>
-                                                <th>{{__('admin/products.name')}}</th>
-                                                <th>{{__('admin/products.slug')}}</th>
-                                                <th> {{__('admin/products.status')}}</th>
+                                                <th>{{__('admin/general.name')}}</th>
+                                                <th>{{__('admin/general.slug')}}</th>
+                                                <th> {{__('admin/general.status')}}</th>
                                                 <th>{{__('admin/products.productPrice')}}</th>
-                                                <th>{{__('admin/products.edit')}}</th>
-                                                <th>{{__('admin/products.delete')}}</th>
+                                                <th>{{__('admin/general.edit')}}</th>
+                                                <th>{{__('admin/general.delete')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -67,21 +67,21 @@
                                                         <td>{{$product -> price}}</td>
                                                         <td>
                                                             <div class="dropdown">
-                                                                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    edit
+                                                                <button class="btn btn-info box-shadow-3 btn-min-width dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    {{__('admin/general.edit')}}
                                                                 </button>
                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item" href="{{route('admin.products.general.edit',$product->id)}}">الوصف</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.price.edit',$product->id)}}">السعر</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.stock.edit',$product->id)}}">المستودع</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.images.edit',$product->id)}}">الصور</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.general.edit',$product->id)}}">{{__('admin/products.description')}}</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.price.edit',$product->id)}}">{{__('admin/general.price')}}</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.stock.edit',$product->id)}}">{{__('admin/products.stock')}}</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.products.images.edit',$product->id)}}">{{__('admin/products.images')}}</a>
                                                                 </div>
                                                             </div>
                                                         </td>
 
                                                         <td>
                                                             <a href=""
-                                                               class="btn btn-danger btn-min-width box-shadow-3 ">{{__('admin/products.delete')}}</a>
+                                                               class="btn btn-danger btn-min-width box-shadow-3 ">{{__('admin/general.delete')}}</a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

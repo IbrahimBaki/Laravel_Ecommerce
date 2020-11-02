@@ -10,7 +10,7 @@
                     <div class="card-header border-0">
                         <div class="card-title text-center">
                             <div class="p-1">
-                                <img src="{{asset('assets/admin/images/wolf.png')}}" alt="LOGO" width="140px" height="100px"/>
+                                <img src="{{asset('assets/images/wolf.png')}}" alt="LOGO" width="140px" height="100px"/>
                                 <h3>Wolf Store</h3>
 
                             </div>

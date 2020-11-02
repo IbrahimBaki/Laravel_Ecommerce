@@ -116,21 +116,33 @@ class ProductsController extends Controller
     }
     public function saveStock(StockProductRequest $request)
     {
-        try {
+        //try {
             $product = Product::find($request->id);
             $product->update($request->except('id','_token'));
             $id = $request->id;
             return view('dashboard.products.images.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
 
-        }catch(\Exception $ex){
-            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
-        }
+//        }catch(\Exception $ex){
+//            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
+//        }
 
     }
 
 
     public function addImages($id)
     {
+        // Delete disk images not found in db
+//        foreach($images as $image){
+//            $db_image = $image->photo;
+//            foreach (Storage::disk('products')->allFiles() as $img){
+//                $st_img =
+//                if($st_img != $db_image){
+//                    Storage::disk('products')->delete($st_img);
+//                }else{
+//                    return true;
+//                }
+//            }
+//    }
         return view('dashboard.products.images.create',compact('id'));
     }
 
@@ -161,7 +173,7 @@ class ProductsController extends Controller
                 }
             }
 
-            return redirect()->route('admin.products')->with(['success'=>'تم التحديث بنجاح']);
+            return redirect()->route('admin.options.create')->with(['success'=>'تم التحديث بنجاح']);
 
 //        }catch (\Exception $ex){
 //            return redirect()->route('admin.products')->with(['error'=>'هناك خطأ ما']);
@@ -266,7 +278,7 @@ class ProductsController extends Controller
         $this->checkExists($image);
         Storage::disk('products')->delete($image->photo);
         $image->delete();
-        return redirect()->back();
+        return view('admin.products');
 
 
 

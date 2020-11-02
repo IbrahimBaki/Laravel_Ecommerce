@@ -8,12 +8,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
-                                <li class="breadcrumb-item active"><a href="{{route('admin.categories')}}">{{__('admin/categories.categories')}}</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.categories')}}">{{__('admin/general.categories')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.edit')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.edit')}}
                                 </li>
                             </ol>
                         </div>
@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/categories.catEdit')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/general.catEdit')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -57,14 +57,14 @@
                                             <div class="form-group">
                                                 <div class="text-center">
                                                     <img src=""
-                                                         alt="{{__('admin/categories.categoryPhoto')}}"
+                                                         alt="{{__('admin/general.catPhoto')}}"
                                                          class="rounded-circle height-150"
                                                     >
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>{{__('admin/categories.categoryPhoto')}}</label>
+                                                <label>{{__('admin/general.catPhoto')}}</label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="photo">
                                                     <span class="file-custom"></span>
@@ -78,19 +78,19 @@
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/categories.data')}}
+                                                        class="ft-home"></i> {{__('admin/general.catData')}}
                                                 </h4>
 
                                                     <div class="row hidden" id="cats_list">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label
-                                                                    for="projectinput1"> {{__('admin/categories.parent')}} </label>
+                                                                    for="projectinput1"> {{__('admin/general.catParent')}} </label>
 
                                                                 <select name="parent_id"
                                                                         id="parent_id"
                                                                         class="form-control">
-                                                                    <optgroup label="{{__('admin/categories.categories')}}">
+                                                                    <optgroup label="{{__('admin/general.categories')}}">
                                                                         @if($categories && $categories->count()>0)
                                                                             @foreach($categories as $cat)
                                                                                 <option @if($category->parent_id == $cat->id) selected @endif
@@ -111,7 +111,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.catName')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.catName')}} </label>
                                                             <input type="text"
                                                                    value="{{$category -> name}}"
                                                                    id="name"
@@ -127,7 +127,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.slug')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.slug')}} </label>
                                                             <input type="text"
                                                                    value="{{$category -> slug}}"
                                                                    id="slug"
@@ -154,7 +154,7 @@
                                                                    data-color="success"
                                                                    @if($category->is_active == 1)checked @endif
                                                             >
-                                                            <label for="switcheryColor4" class="card-title ml-1">{{__('admin/categories.status')}}</label>
+                                                            <label for="switcheryColor4" class="card-title ml-1">{{__('admin/general.status')}}</label>
                                                             @error("is_active")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -171,7 +171,7 @@
                                                             />
                                                             <label
                                                                 class="card-title ml-1">
-                                                                قسم رئيسي
+                                                                {{__('admin/general.catMain')}}
                                                             </label>
                                                         </div>
 
@@ -187,7 +187,7 @@
                                                             />
                                                             <label
                                                                 class="card-title ml-1">
-                                                                قسم فرعي
+                                                                {{__('admin/general.catSub')}}
                                                             </label>
                                                         </div>
 
@@ -203,10 +203,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                    <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                    <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                 </button>
                                             </div>
                                         </form>

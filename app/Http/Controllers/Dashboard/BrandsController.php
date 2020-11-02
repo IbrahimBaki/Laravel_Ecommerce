@@ -69,6 +69,8 @@ class BrandsController extends Controller
                 ]);
             }
             $brands->update($request ->except('_token','id','photo'));
+            $brands->name = $request->name;
+            $brands->save();
             DB::commit();
             return redirect()->route('admin.brands')->with(['success' => __('admin/messages.success')]);
         }catch (\Exception $ex){
