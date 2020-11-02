@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralProductRequest;
-use App\Http\Requests\MainCategoryRequest;
+use App\Http\Requests\ImageProductRequest;
 use App\Http\Requests\PriceProductRequest;
 use App\Http\Requests\StockProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Traits\ProductTrait;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -22,7 +24,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::select('id','slug','price','created_at')->paginate(10);
-        return view('dashboard.products.general.index',compact('products'));
+        return view('dashboard.products.index',compact('products'));
 
 
     }
@@ -114,18 +116,70 @@ class ProductsController extends Controller
     }
     public function saveStock(StockProductRequest $request)
     {
-        try {
+        //try {
             $product = Product::find($request->id);
             $product->update($request->except('id','_token'));
             $id = $request->id;
-            return view('dashboard.products.stock.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
+            return view('dashboard.products.images.create',compact('id','product'))->with(['success'=>__('admin/messages.created')]);
 
-        }catch(\Exception $ex){
-            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
-        }
+//        }catch(\Exception $ex){
+//            return redirect()->back()->with(['error'=>__('admin.messages.error')]);
+//        }
 
     }
 
+
+    public function addImages($id)
+    {
+        // Delete disk images not found in db
+//        foreach($images as $image){
+//            $db_image = $image->photo;
+//            foreach (Storage::disk('products')->allFiles() as $img){
+//                $st_img =
+//                if($st_img != $db_image){
+//                    Storage::disk('products')->delete($st_img);
+//                }else{
+//                    return true;
+//                }
+//            }
+//    }
+        return view('dashboard.products.images.create',compact('id'));
+    }
+
+//save Image to folder
+    public function saveImagesToFolder(Request $request)
+    {
+        $file = $request->file('dzfile');
+        $fileName = uploadImage('products',$file);
+
+        return response()->json([
+            'name' => $fileName,
+            'original_name'=> $file->getClientOriginalName(),
+        ]);
+    }
+
+    public function saveImagesToDB(ImageProductRequest $request)
+    {
+
+//        try{
+            //save dropzone images to db
+            if($request->has('document') && count($request->document) > 0 ){
+                foreach($request->document as $image){
+                    Image::create([
+                        'imageable_id'=>$request->product_id,
+                        'imageable_type'=>'App\Models\Products',
+                        'photo'=>$image,
+                    ]);
+                }
+            }
+
+            return redirect()->route('admin.options.create')->with(['success'=>'تم التحديث بنجاح']);
+
+//        }catch (\Exception $ex){
+//            return redirect()->route('admin.products')->with(['error'=>'هناك خطأ ما']);
+//        }
+
+    }
 
 
 
@@ -156,6 +210,13 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $this->checkExists($product);
         return view('dashboard.products.stock.create', compact('product','id'));
+    }
+
+    public function editImage($id)
+    {
+        $product = Product::find($id);
+        $this->checkExists($product);
+        return view('dashboard.products.images.create', compact('product','id'));
     }
 
     public function update(GeneralProductRequest $request, $id)
@@ -192,18 +253,34 @@ class ProductsController extends Controller
 //        }
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
-        try {
+        $currentImage = Image::findOrFail($id);
 
-            $category = Category::find($id);
-            $this->checkExists($category);
-            $category->delete();
-            return redirect()->route('admin.categories')->with(['success' => __('admin/messages.deleted')]);
-
-        } catch (\Exception $ex) {
-            return redirect()->route('admin.categories')->with(['error' => __('admin/messages.error')]);
+        //validation to make sure that none can delete images except the person who upload them
+        if($currentImage->created_by != Auth::user()->id){ // created_by is founded in db
+            abort('403','You are not allowed to delete this Images');
         }
+
+        $images = $currentImage->images();
+        foreach ($currentImage->images as $image){
+            unlink(public_path($image->file_path)); // file_path is the directory of an images
+        }
+        $currentImage->images()->delete();
+        $currentImage->delete();
+
+        return redirect()->back();
+    }
+
+    public function imgDelete($id)
+    {
+        $image = Image::find($id);
+        $this->checkExists($image);
+        Storage::disk('products')->delete($image->photo);
+        $image->delete();
+        return view('admin.products');
+
+
 
     }
 }

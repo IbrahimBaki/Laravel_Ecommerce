@@ -9,13 +9,13 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.brands')}}">{{__('admin/brands.brands')}}</a>
+                                        href="{{route('admin.brands')}}">{{__('admin/general.brands')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.add')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.add')}}
                                 </li>
                             </ol>
                         </div>
@@ -30,9 +30,20 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/brands.addBrand')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/general.addBrand')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link bg-aqua-active" href="#" id="english-link">EN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" id="arabic-link">AR</a>
+                                        </li>
+                                    </ul>
+
+
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
                                             <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -51,9 +62,11 @@
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
-
+                                            <h4 class="form-section"><i
+                                                    class="ft-home"></i> {{__('admin/general.brandData')}}
+                                            </h4>
                                             <div class="form-group">
-                                                <label>{{__('admin/brands.brandPhoto')}}</label>
+                                                <label>{{__('admin/general.brandPhoto')}}</label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="photo">
                                                     <span class="file-custom"></span>
@@ -65,15 +78,11 @@
 
 
                                             <div class="form-body">
-
-                                                <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/brands.brandData')}}
-                                                </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.name')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.name')}} </label>
                                                             <input type="text"
                                                                    value="{{old('name')}}"
                                                                    id="name"
@@ -95,7 +104,7 @@
                                                                    data-color="success"
                                                                    checked>
                                                             <label for="switcheryColor4"
-                                                                   class="card-title ml-1">{{__('admin/categories.status')}}</label>
+                                                                   class="card-title ml-1">{{__('admin/general.status')}}</label>
                                                             @error("is_active")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -126,10 +135,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                    <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                    <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                 </button>
                                             </div>
                                         </form>

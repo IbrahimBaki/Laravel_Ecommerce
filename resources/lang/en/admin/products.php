@@ -2,17 +2,24 @@
 
 return [
 
-    'products' => 'Products',
-    'productAdd' => 'Add New Product',
-    'data' => 'Product General Information',
+########## Index Page #############
+    'allProducts' => 'All Products',
+    'description' => 'Description',
+    'stock' => 'Stock',
+    'images' => 'Images',
+
+########## Create Page #############
+    'productData' => 'Product General Information',
     'productName' => 'Product Name',
     'productDescription' => 'Product Description ',
     'short_description' => 'Short Description',
-    'category' => 'Choose Categories',
-    'tags' => 'Choose Tags',
-    'brands' => 'Choose Brand',
+    'chooseCategory' => 'Choose Categories',
+    'chooseTags' => 'Choose Tags',
+    'chooseBrand' => 'Choose Brand',
 
-    ######### Price Page ############
+    'productEdit' => 'Product Edit',
+
+######### Price Page ############
     'priceData' => 'Product Price Information',
     'productPrice' => 'Product Price',
     'productSpecialPrice' => 'Product Special Price',
@@ -20,29 +27,34 @@ return [
     'specialPriceStart' => 'Special Price Start Date',
     'specialPriceEnd' => 'Special Price End Date',
 
-    ######### stock Page ############
-    'stockData'=>'Stock Management',
-    'sku'=>'Product code',
-    'stockFollow'=>'Stock Following',
-    'allow'=>'Allow',
-    'disallow'=>'Not Allow',
-    'avail'=>'Available',
-    'nonAvail'=>'Not Available',
-    'productStatus'=>'Product Status',
-    'qty'=>'Product Quantity',
+######### stock Page ############
+    'stockData' => 'Stock Management',
+    'sku' => 'Product code',
+    'stockFollow' => 'Stock Following',
+    'allow' => 'Allow',
+    'disallow' => 'Not Allow',
+    'available' => 'Available',
+    'nonAvailable' => 'Not Available',
+    'productStatus' => 'Product Status',
+    'qty' => 'Product Quantity',
 
+######### Image Page ############
+    'productsImages' => 'products Images',
+    'dzUploadHere' => 'Upload Product Images',
+    'fallBackMess' => "Your Browser doesn't support Drag & Drop Property",
+    'invalidFType' => "You can't upload this type of files",
+    'cancelUpload' => "Cancel Upload",
+    'cancelingConfirm' => "Are you sure, you want to cancel this file",
+    'maxFiles' => "You can't upload more",
 
-    ########## Index Page #############
-    'allProducts' => 'All Products',
-    'name' => 'Product Name',
-    'slug' => 'Product Slug',
-    'status' => 'Product status',
-    'operations' => 'Operations',
-    'edit' => 'Edit',
-    'desc' => 'Description',
-    'price' => 'Price',
-    'stock' => 'Stock',
-    'images' => 'Images',
-    'delete' => 'Delete',
+############ Attributes ###################
 
+'attributesEdit'=>'Edit Attributes',
+'attributesAll'=>'All Products Attributes',
+
+############ Options ###################
+'optionsEdit'=>'Edit Attributes',
+'optionsAll'=>'All Products Attributes',
+'chooseProduct'=>'select Product',
+'chooseAttribute'=>'select Attribute',
 ];

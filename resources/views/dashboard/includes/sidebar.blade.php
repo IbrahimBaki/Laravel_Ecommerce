@@ -1,16 +1,15 @@
 
-
 <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
             <li class="nav-item"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span
-                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.home')}} </span></a>
+                        class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{__('admin/general.home')}} </span></a>
             </li>
 
             <li class="nav-item">
                 <a href=""><i class="la la-language"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.languages')}} </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/general.languages')}} </span>
                     <span
                         class="badge badge badge-info badge-pill float-right mr-2"></span>
                 </a>
@@ -28,105 +27,108 @@
 
                 <ul class="menu-content">
                     <li class="">
-                        <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
+                        <a class="menu-item" href=""  data-i18n="nav.dash.ecommerce"> {{__('admin/general.showAll')}} </a>
                     </li>
                     <li>
-                        <a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addLanguage')}} </a>
+                        <a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/general.addLanguage')}} </a>
                     </li>
                 </ul>
             </li>
 
                 {{--###########   Main Category  ##################--}}
             <li class="nav-item"><a href=""><i class="la la-navicon"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/categories.categories')}} </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/general.categories')}} </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class=""><a class="menu-item" href="{{route('admin.categories')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}}</a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/general.showAll')}}</a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.categories.create')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
-                    </li>
-                </ul>
-            </li>
-
-            {{--###########   Sub Category      ##################--}}
-            {{--
-            <li class="nav-item"><a href=""><i class="la la-list-ul"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.subCategories')}}  </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::child()->count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.mainCategories','sub_category')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
-                    </li>
-                    <li><a class="menu-item" href="{{route('admin.mainCategories.create','sub_category')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addCategory')}}</a>
+                    <li><a class="menu-item" href="{{route('admin.categories.create')}}" data-i18n="nav.dash.crypto">{{__('admin/general.catAdd')}}</a>
                     </li>
                 </ul>
             </li>
-            --}}
 
             {{--###########     Brands    ##################--}}
             <li class="nav-item"><a href=""><i class="la la-check-circle"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/brands.brands')}}  </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/general.brands')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class=""><a class="menu-item" href="{{route('admin.brands')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/general.showAll')}} </a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.brands.create')}}" data-i18n="nav.dash.crypto">{{__('admin/brands.addBrand')}}</a>
+                    <li><a class="menu-item" href="{{route('admin.brands.create')}}" data-i18n="nav.dash.crypto">{{__('admin/general.addBrand')}}</a>
                     </li>
                 </ul>
             </li>
 
             {{--###########     Tags    ##################--}}
             <li class="nav-item"><a href=""><i class="la la-tag"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/tags.tags')}}  </span>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/general.tags')}}  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class=""><a class="menu-item" href="{{route('admin.tags')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/general.showAll')}} </a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">{{__('admin/tags.addTag')}}</a>
+                    <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">{{__('admin/general.addTags')}}</a>
                     </li>
                 </ul>
             </li>
 
             {{--###########     Products    ##################--}}
-            <li class="nav-item"><a href=""><i class="la la-shopping-cart"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.products')}}  </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Product::count()}}</span>
-                </a>
+            <li class=" nav-item"><a href="#"><i class="la la-shopping-cart"></i><span class="menu-title"
+                                                                                       data-i18n="nav.page_layouts.main">{{__('admin/general.products')}}</span>
+                    <span class="badge badge badge-pill badge-danger float-right mr-2">{{\App\Models\Product::count()}}</span></a>
                 <ul class="menu-content">
-                    <li class=""><a class="menu-item" href="{{route('admin.products')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/sidebar.showAll')}} </a>
+                    <li><a class="menu-item" href="{{route('admin.products')}}" data-i18n="nav.page_layouts.1_column">{{__('admin/general.showAll')}}</a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.products.general.create')}}" data-i18n="nav.dash.crypto">{{__('admin/sidebar.addProduct')}}</a>
+                    <li><a class="menu-item" href="{{route('admin.products.general.create')}}" data-i18n="nav.page_layouts.2_columns">{{__('admin/general.addProduct')}}</a>
+                    </li>
+
+                    <li><a class="menu-item" href="#" data-i18n="nav.page_layouts.3_columns.main"><b>{{__('admin/general.attributes')}}</b>
+                            <span class="badge badge badge-pill badge-danger float-right mr-2">{{\App\Models\Attribute::count()}}</span></a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('admin.attributes')}}"
+                                   data-i18n="nav.page_layouts.3_columns.left_sidebar">{{__('admin/general.showAll')}}</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('admin.attributes.create')}}"
+                                   data-i18n="nav.page_layouts.3_columns.left_sticky_sidebar">{{__('admin/general.addAttributes')}}</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a class="menu-item" href="#" data-i18n="nav.page_layouts.3_columns_detached.main"><b>{{__('admin/general.options')}}</b>
+                            <span class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Option::count()}}</span></a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('admin.options')}}"
+                                   data-i18n="nav.page_layouts.3_columns_detached.detached_left_sidebar">{{__('admin/general.showAll')}}</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('admin.options.create')}}"
+                                   data-i18n="nav.page_layouts.3_columns_detached.detached_sticky_left_sidebar">{{__('admin/general.addOptions')}}</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
 
 
-
             <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title"
-                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.settings')}}</span></a>
+                                                                                    data-i18n="nav.templates.main">{{__('admin/general.settings')}}</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.shipping methods')}}</a>
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/general.shipping methods')}}</a>
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('edit.shipping.methods','free')}}"
-                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.free shipping')}}</a>
+                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/general.free shipping')}}</a>
                             </li>
-                            <li><a class="menu-item" href="{{route('edit.shipping.methods','local')}}">{{__('admin/sidebar.local pickup')}}</a>
+                            <li><a class="menu-item" href="{{route('edit.shipping.methods','local')}}">{{__('admin/general.local pickup')}}</a>
                             </li>
                             <li><a class="menu-item" href="{{route('edit.shipping.methods','outer')}}"
-                                   data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.flat rate')}}</a>
+                                   data-i18n="nav.templates.vert.compact_menu">{{__('admin/general.flat rate')}}</a>
                             </li>
 
                         </ul>
@@ -139,88 +141,6 @@
                                                                         data-toggle="tooltip"
                                                                         data-placement="right"
                                                                         data-original-title="Layouts"></i>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title"
-                                                                                 data-i18n="nav.page_layouts.main">Page layouts</span><span
-                        class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="layout-1-column.html" data-i18n="nav.page_layouts.1_column">1
-                            column</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-2-columns.html" data-i18n="nav.page_layouts.2_columns">2
-                            columns</a>
-                    </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.page_layouts.3_columns.main">Content Sidebar</a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="layout-content-left-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns.left_sidebar">Left sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-left-sticky-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns.left_sticky_sidebar">Left sticky sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-right-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns.right_sidebar">Right sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-right-sticky-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns.right_sticky_sidebar">Right sticky sidebar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a class="menu-item" href="#" data-i18n="nav.page_layouts.3_columns_detached.main">Content Det.
-                            Sidebar</a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="layout-content-detached-left-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns_detached.detached_left_sidebar">Detached left
-                                    sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-detached-left-sticky-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns_detached.detached_sticky_left_sidebar">Detached
-                                    sticky left sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-detached-right-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns_detached.detached_right_sidebar">Detached right
-                                    sidebar</a>
-                            </li>
-                            <li><a class="menu-item" href="layout-content-detached-right-sticky-sidebar.html"
-                                   data-i18n="nav.page_layouts.3_columns_detached.detached_sticky_right_sidebar">Detached
-                                    sticky right sidebar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="navigation-divider"></li>
-                    <li><a class="menu-item" href="layout-fixed-navbar.html" data-i18n="nav.page_layouts.fixed_navbar">Fixed
-                            navbar</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-fixed-navigation.html"
-                           data-i18n="nav.page_layouts.fixed_navigation">Fixed navigation</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-fixed-navbar-navigation.html"
-                           data-i18n="nav.page_layouts.fixed_navbar_navigation">Fixed navbar &amp; navigation</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-fixed-navbar-footer.html"
-                           data-i18n="nav.page_layouts.fixed_navbar_footer">Fixed navbar &amp; footer</a>
-                    </li>
-                    <li class="navigation-divider"></li>
-                    <li><a class="menu-item" href="layout-fixed.html" data-i18n="nav.page_layouts.fixed_layout">Fixed
-                            layout</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-boxed.html" data-i18n="nav.page_layouts.boxed_layout">Boxed
-                            layout</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-static.html" data-i18n="nav.page_layouts.static_layout">Static
-                            layout</a>
-                    </li>
-                    <li class="navigation-divider"></li>
-                    <li><a class="menu-item" href="layout-light.html" data-i18n="nav.page_layouts.light_layout">Light
-                            layout</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-dark.html" data-i18n="nav.page_layouts.dark_layout">Dark
-                            layout</a>
-                    </li>
-                    <li><a class="menu-item" href="layout-semi-dark.html" data-i18n="nav.page_layouts.semi_dark_layout">Semi
-                            dark layout</a>
-                    </li>
-                </ul>
             </li>
             <li class=" nav-item"><a href="#"><i class="la la-navicon"></i><span class="menu-title"
                                                                                  data-i18n="nav.navbars.main">Navbars</span></a>

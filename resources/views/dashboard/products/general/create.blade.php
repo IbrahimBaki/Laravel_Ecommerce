@@ -8,25 +8,15 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.categories')}}">{{__('admin/products.products')}}</a>
+                                        href="{{route('admin.categories')}}">{{__('admin/general.products')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.add')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.add')}}
                                 </li>
                             </ol>
-                        </div>
-                        <div>
-                            <a href=""
-                               class="btn btn-primary">General</a>
-                            <a href=""
-                            class="btn btn-primary">Price</a>
-                            <a href=""
-                               class="btn btn-primary">Photo</a>
-                            <a href=""
-                               class="btn btn-primary">Stock</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/products.productAdd')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/general.addProduct')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,6 +42,23 @@
                                         </ul>
                                     </div>
                                 </div>
+                                {{--
+                                <div class="d-flex justify-content-center">
+                                    <a href=""
+                                       class="btn btn-info">General</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
+                                    <a href=""
+                                       class="btn btn-outline-info">Price</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
+                                    <a href=""
+                                       class="btn btn-outline-info">Stock</a>
+                                    <span class="la la-chevron-right" style="margin: 10px"></span>
+                                    <a href=""
+                                       class="btn btn-outline-info">Photos</a>
+                                </div>
+                                --}}
+
+
                                 @include('dashboard.includes.alerts.success')
                                 @include('dashboard.includes.alerts.errors')
                                 <div class="card-content collapse show">
@@ -89,7 +96,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="slug"> {{__('admin/categories.slug')}} </label>
+                                                                for="slug"> {{__('admin/general.slug')}} </label>
                                                             <input type="text"
                                                                    value="{{old('slug')}}"
                                                                    id="slug"
@@ -148,13 +155,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="categories"> {{__('admin/products.category')}} </label>
+                                                                for="categories"> {{__('admin/products.chooseCategory')}} </label>
 
                                                             <select name="categories[]"
                                                                     id="categories"
                                                                     class="select2 form-control" multiple>
                                                                 <optgroup
-                                                                    label="{{__('admin/categories.categories')}}">
+                                                                    label="{{__('admin/general.categories')}}">
                                                                     @if($data['categories'] && $data['categories']->count()>0)
                                                                         @foreach($data['categories'] as $category)
                                                                             <option
@@ -172,13 +179,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="tag"> {{__('admin/products.tags')}} </label>
+                                                                for="tag"> {{__('admin/products.chooseTags')}} </label>
 
                                                             <select name="tags[]"
                                                                     id="tag"
                                                                     class="select2 form-control" multiple>
                                                                 <optgroup
-                                                                    label="{{__('admin/tags.tags')}}">
+                                                                    label="{{__('admin/general.tags')}}">
                                                                     @if($data['tags'] && $data['tags']->count()>0)
                                                                         @foreach($data['tags'] as $tag)
                                                                             <option
@@ -196,13 +203,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label
-                                                                for="brand_id"> {{__('admin/products.brands')}} </label>
+                                                                for="brand_id"> {{__('admin/products.chooseBrand')}} </label>
 
                                                             <select name="brand_id"
                                                                     id="brand_id"
                                                                     class="form-control">
                                                                 <optgroup
-                                                                    label="{{__('admin/brands.brands')}}">
+                                                                    label="{{__('admin/general.brands')}}">
                                                                     @if($data['brands'] && $data['brands']->count()>0)
                                                                         @foreach($data['brands'] as $brand)
                                                                             <option
@@ -230,7 +237,7 @@
                                                                    data-color="success"
                                                                    checked>
                                                             <label for="switcheryColor4"
-                                                                   class="card-title ml-1">{{__('admin/categories.status')}}</label>
+                                                                   class="card-title ml-1">{{__('admin/general.status')}}</label>
                                                             @error("is_active")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -244,10 +251,10 @@
                                                 <div class="form-actions">
                                                     <button type="button" class="btn btn-warning mr-1"
                                                             onclick="history.back();">
-                                                        <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                        <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                     </button>
                                                     <button type="submit" class="btn btn-primary">
-                                                        <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                        <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                     </button>
                                                 </div>
                                             </div>

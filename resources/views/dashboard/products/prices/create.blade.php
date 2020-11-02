@@ -8,13 +8,13 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.categories')}}">{{__('admin/products.products')}}</a>
+                                        href="{{route('admin.categories')}}">{{__('admin/general.products')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.add')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.price')}}
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/products.productAdd')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/products.priceData')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -41,6 +41,16 @@
                                             <li><a data-action="close"><i class="ft-x"></i></a></li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href=""
+                                       class="btn btn-outline-info">{{__('admin/products.description')}}</a>
+                                    <a href=""
+                                       class="btn btn-info">{{__('admin/general.price')}}</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">{{__('admin/products.stock')}}</a>
+                                    <a href=""
+                                       class="btn btn-outline-info">{{__('admin/products.images')}}</a>
                                 </div>
                                 @include('dashboard.includes.alerts.success')
                                 @include('dashboard.includes.alerts.errors')
@@ -77,7 +87,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="special_price"> {{__('admin/categories.productSpecialPrice')}} </label>
+                                                            <label for="special_price"> {{__('admin/products.productSpecialPrice')}} </label>
                                                             <input type="number"
                                                                    value="{{$product->special_price ?? old('special_price')}}"
                                                                    id="special_price"
@@ -161,10 +171,10 @@
                                                 <div class="form-actions">
                                                     <button type="button" class="btn btn-warning mr-1"
                                                             onclick="history.back();">
-                                                        <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                        <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                     </button>
                                                     <button type="submit" class="btn btn-primary">
-                                                        <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                        <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                     </button>
                                                 </div>
 

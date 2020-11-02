@@ -46,6 +46,13 @@ class Product extends Model
 
     protected $slugAttribute = 'name';
 
+
+    public function scopeActive($query)
+    {
+        return $query -> where('is_active',1);
+    }
+
+
     public function brand()
     {
         return $this->belongsTo(Brand::class )->withDefault();
@@ -60,8 +67,17 @@ class Product extends Model
     {
         return $this->belongsToMany(Tag::class,'product_tags');
     }
+    public function images()
+    {
+        return $this->hasMany(Image::class,'imageable_id','id');
+    }
     public function getActive()
     {
-        return $this->is_active == 0 ? __('admin/categories.notActive') : __('admin/categories.active') ;
+        return $this->is_active == 0 ? __('admin/general.notActive') : __('admin/general.active') ;
+    }
+
+    public function options()
+    {
+        return $this->hasMany(Option::class,'product_id','id');
     }
 }

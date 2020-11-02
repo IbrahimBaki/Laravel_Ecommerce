@@ -9,13 +9,13 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.tags')}}">{{__('admin/tags.tags')}}</a>
+                                        href="{{route('admin.tags')}}">{{__('admin/general.tags')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.edit')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.edit')}}
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/tags.tagEdit')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/general.tagEdit')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -58,7 +58,7 @@
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/tags.tagData')}}
+                                                        class="ft-home"></i> {{__('admin/general.tagData')}}
                                                 </h4>
                                                 {{--
                                                 <div class="row">
@@ -94,7 +94,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.name')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.name')}} </label>
                                                             <input type="text"
                                                                    value="{{$tags->name}}"
                                                                    id="name"
@@ -110,7 +110,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.linkName')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.slug')}} </label>
                                                             <input type="text"
                                                                    value="{{$tags->slug}}"
                                                                    id="slug"
@@ -133,10 +133,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                    <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                    <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                 </button>
                                             </div>
                                         </form>

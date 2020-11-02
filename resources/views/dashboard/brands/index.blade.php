@@ -7,13 +7,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> {{__('admin/brands.brands')}} </h3>
+                    <h3 class="content-header-title"> {{__('admin/general.brands')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/categories.main')}}</a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/general.main')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active"> {{__('admin/brands.brands')}}
+                                <li class="breadcrumb-item active"> {{__('admin/general.brands')}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">{{__('admin/brands.all')}} </h4>
+                                    <h4 class="card-title">{{__('admin/general.all')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -49,10 +49,10 @@
                                             class="table display nowrap table-striped table-bordered scroll-horizontal">
                                             <thead class="">
                                             <tr>
-                                                <th>{{__('admin/categories.name')}}</th>
-                                                <th>{{__('admin/categories.status')}}</th>
-                                                <th>{{__('admin/categories.categoryPhoto')}}</th>
-                                                <th>{{__('admin/categories.operations')}}</th>
+                                                <th>{{__('admin/general.name')}}</th>
+                                                <th>{{__('admin/general.status')}}</th>
+                                                <th>{{__('admin/general.brandPhoto')}}</th>
+                                                <th>{{__('admin/general.operations')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -69,11 +69,11 @@
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{route('admin.brands.edit',$brand -> id)}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/categories.edit')}}</a>
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/general.edit')}}</a>
 
 
                                                                 <a href="{{route('admin.brands.delete',$brand -> id)}}"
-                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/categories.delete')}}</a>
+                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/general.delete')}}</a>
 
 
                                                             </div>

@@ -16,8 +16,8 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "mcamara/laravel-localization": "^1.5",
-        "yajra/laravel-datatables-oracle": "~9.0",
-      "ext-http": "*"
+        "php-http/curl-client": "^2.1",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

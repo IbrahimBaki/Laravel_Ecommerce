@@ -11,7 +11,7 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.html">
                         <img class="brand-logo" alt="modern admin logo"
-                             src="{{asset('assets/admin/images/wolf.png')}}">
+                             src="{{asset('assets/images/wolf.png')}}">
                         <h3 class="brand-text">Wolf Admin</h3>
                     </a>
                 </li>
@@ -30,12 +30,11 @@
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav mr-auto float-left">
-                    <li  style="margin: 10px 0px 0px 5px"><h2 class="text-bold-700" style="color: white">Wolf Store</h2></li>
                     <li>
                         <img class="brand-logo" alt="modern admin logo"
-                             src="{{asset('assets/admin/images/wolf1.png')}}"
-                            height="50px"
-                            width="70px">
+                             src="{{asset('assets/images/wolf_logo.png')}}"
+                            height="70px"
+                            width="250px">
                     </li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
@@ -49,9 +48,9 @@
                   <img  style="height: 35px;" src="{{asset('assets/admin/images/adminIcon.png')}}" alt="avatar"><i></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edit.profile')}}"><i
-                                    class="ft-user"></i> {{__('admin/header.editProfile')}} </a>
+                                    class="ft-user"></i> {{__('admin/general.editProfile')}} </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> {{__('admin/header.logOut')}} </a>
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> {{__('admin/general.logOut')}} </a>
                         </div>
 
                     </li>

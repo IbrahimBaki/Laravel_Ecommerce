@@ -9,13 +9,13 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.brands')}}">{{__('admin/brands.brands')}}</a>
+                                        href="{{route('admin.brands')}}">{{__('admin/general.brands')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.edit')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.edit')}}
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> {{__('admin/brands.brandEdit')}} </h4>
+                                        id="basic-layout-form"> {{__('admin/general.brandEdit')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,20 +52,23 @@
                                               enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
+                                            <h4 class="form-section"><i
+                                                    class="ft-home"></i> {{__('admin/general.brandData')}}
+                                            </h4>
 
                                             <input type="hidden" name="id" value="{{$brands -> id}}">
 
                                             <div class="form-group">
                                                 <div class="text-center">
                                                     <img src="{{$brands->photo}}"
-                                                         alt="{{__('admin/brands.brandPhoto')}}"
+                                                         alt="{{__('admin/general.brandPhoto')}}"
                                                          class="rounded-circle height-150"
                                                     >
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>{{__('admin/brands.brandPhoto')}}</label>
+                                                <label>{{__('admin/general.brandPhoto')}}</label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file"
                                                            id="file"
@@ -82,9 +85,7 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/brands.brandData')}}
-                                                </h4>
+
                                                 {{--
                                                                                                     <div class="row">
                                                                                                         <div class="col-md-12">
@@ -116,7 +117,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.catName')}} </label>
+                                                                for="projectinput1"> {{__('admin/general.brandName')}} </label>
                                                             <input type="text"
                                                                    value="{{$brands->name}}"
                                                                    id="name"
@@ -139,7 +140,7 @@
                                                                    @if($brands->is_active == 1) checked @endif
                                                             >
                                                             <label for="switcheryColor4"
-                                                                   class="card-title ml-1">{{__('admin/categories.status')}}</label>
+                                                                   class="card-title ml-1">{{__('admin/general.status')}}</label>
                                                             @error("is_active")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -156,10 +157,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i>{{__('admin/categories.cancel')}}
+                                                    <i class="ft-x"></i>{{__('admin/general.cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
+                                                    <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                 </button>
                                             </div>
                                         </form>
