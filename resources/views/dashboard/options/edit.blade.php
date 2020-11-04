@@ -9,13 +9,13 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{__('admin/shipping.main')}} </a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/general.main')}} </a>
                                 </li>
 
                                 <li class="breadcrumb-item active"><a
-                                        href="{{route('admin.brands')}}">خصائص المنتج</a>
+                                        href="{{route('admin.options')}}">{{__('admin/general.options')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/categories.add')}}
+                                <li class="breadcrumb-item active">{{__('admin/general.add')}}
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title"
-                                        id="basic-layout-form"> اضافة خصائص المنتج </h4>
+                                        id="basic-layout-form"> {{__('admin/general.addOptions')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -47,22 +47,21 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.attributes.update',$attributes->id)}}"
+                                              action="{{route('admin.options.update',$option->id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-body">
-
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> Product Attributes
+                                                        class="ft-home"></i> {{__('admin/general.options')}}
                                                 </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label
-                                                                for="projectinput1"> {{__('admin/categories.name')}} </label>
+                                                                for="name"> {{__('admin/general.name')}} </label>
                                                             <input type="text"
-                                                                   value="{{$attributes->name}}"
+                                                                   value="{{$option->name}}"
                                                                    id="name"
                                                                    class="form-control"
                                                                    placeholder=""
@@ -72,18 +71,72 @@
                                                             @enderror
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="price"> {{__('admin/general.price')}} </label>
+                                                            <input type="text"
+                                                                   value="{{$option->price}}"
+                                                                   id="price"
+                                                                   class="form-control"
+                                                                   placeholder=""
+                                                                   name="price">
+                                                            @error("price")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="product"> {{__('admin/products.chooseProduct')}}</label>
+                                                            <select class="form-control" name="product" id="product">
+                                                                <optgroup label="Choose Product">
+                                                                    @if($data['products'] && $data['products']->count()>0)
+                                                                        @foreach($data['products'] as $product)
+                                                                            <option value="{{$product->id}}"
+                                                                                    @if($option->product_id == $product->id) selected @endif
+                                                                            >{{$product->name}}</option>
+                                                                        @endforeach
+                                                                    @endif
+                                                                </optgroup>
+                                                            </select>
+                                                            @error("product")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
 
-
-                                            <div class="form-actions">
-                                                <button type="button" class="btn btn-warning mr-1"
-                                                        onclick="history.back();">
-                                                    <i class="ft-x"></i>{{__('admin/categories.cancel')}}
-                                                </button>
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i>{{__('admin/categories.save')}}
-                                                </button>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="attribute"> {{__('admin/products.chooseAttribute')}} </label>
+                                                            <select class="form-control" name="attribute" id="attribute">
+                                                                <optgroup label="Choose Attribute">
+                                                                    @if($data['attributes'] && $data['attributes']->count()>0)
+                                                                        @foreach($data['attributes'] as $attribute)
+                                                                            <option value="{{$attribute->id}}"
+                                                                                    @if($option->attribute_id == $attribute->id) selected @endif
+                                                                            >{{$attribute->name}}</option>
+                                                                        @endforeach
+                                                                    @endif
+                                                                </optgroup>
+                                                            </select>
+                                                            @error("attribute")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn btn-warning mr-1"
+                                                            onclick="history.back();">
+                                                        <i class="ft-x"></i>{{__('admin/general.cancel')}}
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
+                                                    </button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>

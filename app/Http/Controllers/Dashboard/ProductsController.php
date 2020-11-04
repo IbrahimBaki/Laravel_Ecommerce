@@ -23,7 +23,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::select('id','slug','price','created_at')->paginate(10);
+        $products = Product::select('id','slug','price','created_at','is_active')->paginate(10);
         return view('dashboard.products.index',compact('products'));
 
 
@@ -188,7 +188,6 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-
         $this->checkExists($product);
         $data = [
             'brands' => Brand::active()->select('id')->get(),

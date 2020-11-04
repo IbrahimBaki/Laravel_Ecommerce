@@ -73,7 +73,7 @@
 
                                             <div class="form-body">
                                                 <h4 class="form-section"><i
-                                                        class="ft-home"></i> {{__('admin/products.data')}}
+                                                        class="ft-home"></i> {{__('admin/products.productData')}}
                                                 </h4>
 
                                                 <div class="row">

@@ -14,7 +14,7 @@ class OptionsController extends Controller
 {
     public function index()
     {
-        $options = Option::select('id','product_id','attribute_id','price')->paginate(PAGINATION_COUNT);
+        $options = Option::select('id','product_id','attribute_id','price')->paginate(10);
         return view('dashboard.options.index',compact('options'));
 
     }
@@ -41,7 +41,7 @@ class OptionsController extends Controller
             $option->name = $request->name;
             $option->save();
             DB::commit();
-            return redirect()->route('admin.options')->with(['success'=>'Saved Successfully']);
+            return redirect()->route('admin.options.create')->with(['success'=>'Saved Successfully']);
         }catch (\Exception $ex){
             DB::rollback();
             return redirect()->route('admin.options')->with(['error' => 'somthing wrong']);
@@ -49,13 +49,39 @@ class OptionsController extends Controller
 
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $data = [
+            'products' => Product::active()->select('id')->get(),
+            'attributes'   => Attribute::select('id')->get(),
+        ];
+
+        $option = Option::find($id);
+        if(!isset($option))
+            return redirect()->route('admin.options')->with(['error'=>'unknown option']);
+
+        return view('dashboard.options.edit',compact('data','option'));
 
     }
 
-    public function update()
+    public function update(OptionRequest $request , $id)
     {
+
+        $option = Option::find($id);
+        if(!isset($option))
+            return redirect()->route('admin.options')->with(['error'=>'unknown option']);
+
+        $option->update([
+           // $request->except('_token')
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'product_id'=>$request->product,
+            'attribute_id'=>$request->attribute,
+        ]);
+        $option->name = $request->name;
+        $option->save();
+
+        return redirect()->route('admin.options')->with(['success'=>'Updated Successfully']);
 
     }
 

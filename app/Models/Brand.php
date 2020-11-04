@@ -24,7 +24,7 @@ class Brand extends Model
 
     public function getActive()
     {
-        return $this->is_active == 0 ? __('admin/categories.notActive') : __('admin/categories.active');
+        return $this->is_active == 0 ? __('admin/general.notActive') : __('admin/general.active');
 
     }
 
