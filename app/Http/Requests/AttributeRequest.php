@@ -36,4 +36,12 @@ class AttributeRequest extends FormRequest
             ]
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' =>  __('messages.reqName'),
+            'name.max' =>  __('messages.reqName'),
+        ];
+    }
 }

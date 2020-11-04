@@ -68,8 +68,8 @@
                                             <input type="hidden" value="" name="type">
                                             <div class="form-group">
                                                 <label>{{__('admin/general.catPhoto')}}</label>
-                                                <label id="projectinput7" class="file center-block">
-                                                    <input type="file" id="file" name="photo">
+                                                <label id="projectinput7" for="photo" class="file center-block">
+                                                    <input type="file" id="photo" name="photo">
                                                     <span class="file-custom"></span>
                                                 </label>
                                                 @error('photo')
@@ -207,6 +207,7 @@
                                                         <i class="la la-check-square-o"></i>{{__('admin/general.save')}}
                                                     </button>
                                                 </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

@@ -65,7 +65,7 @@
                                                         <td>{{$category -> parentId->name ?? ''}}</td>
                                                         <td>{{$category -> slug}}</td>
                                                         <td>{{$category -> getActive()}}</td>
-                                                        <td><img style="width: 150px; height: 100px;" src="{{$category->photo}}"></td>
+                                                        <td><img style="width: 150px; height: 100px;" src="{{asset('assets/images/categories/'.$category->photo)}}"></td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">

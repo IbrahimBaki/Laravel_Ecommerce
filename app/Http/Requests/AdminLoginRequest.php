@@ -24,17 +24,17 @@ class AdminLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'required|email',
-            'password'=>'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
 
     public function messages()
     {
-        return[
-            'email.required'=>'يجب ادخال الايميل',
-            'email.email'=>'صيغة البريد الالكتروني غير صحيحة',
-            'password.required'=>'يجب ادخال الباسوورد',
+        return [
+            'email.required' => __('messages.reqEmail'),
+            'email.email' => __('messages.formEmail'),
+            'password.required' => __('messages.reqPassword'),
         ];
 
     }

@@ -7,10 +7,11 @@ use App\Http\Requests\MainCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Traits\CategoryTrait;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 
-class categoriesController extends Controller
+class CategoriesController extends Controller
 {
     use CategoryTrait;
 
@@ -41,27 +42,33 @@ class categoriesController extends Controller
     {
 
 
-//        try {
+       try {
 
-//            DB::beginTransaction();
+
+            DB::beginTransaction();
             $this->checkStatus($request);
             if ($request->type == 1) //main category
             {
                 $request->request->add(['parent_id' => null]);
             }
+        $fileName = '';
+        if ($request->has('photo'))
+            $fileName = uploadImage('categories', $request->photo);
 
-           $cat = Category::create($request->except('_token'));
+           $cat = Category::create($request->except('_token','photo'));
+            $cat->name = $request->name;
+            $cat->photo = $fileName;
+            $cat->save();
 
-//            DB::commit();
-       $id = $cat->id;
-
+           DB::commit();
+            $id = $cat->id;
             return redirect('/ar/admin/categories/edit/'.$id)->with(['success' => __('admin/messages.created')]);
 
 
-//        } catch (\Exception $ex) {
-//            DB::rollback();
-//            return redirect()->route('admin.categories')->with(['error' => __('admin.messages.error')]);
-//        }
+        } catch (\Exception $ex) {
+            DB::rollback();
+            return redirect()->route('admin.categories')->with(['error' => __('admin.messages.error')]);
+        }
 
     }
 
@@ -90,7 +97,14 @@ class categoriesController extends Controller
                 $request->request->add(['parent_id' => null ]);
 
             }
-            $category->update($request->all());
+
+            if ($request->has('photo')){
+                $fileName = uploadImage('categories', $request->photo);
+            Category::where('id',$id)->update([
+                'photo' => $fileName
+                ]);
+            }
+            $category->update($request->except('_token','photo'));
             $category->name = $request->name;
             $category->save();
             DB::commit();
@@ -108,6 +122,8 @@ class categoriesController extends Controller
 
             $category = Category::find($id);
             $this->checkExists($category);
+            $category->translations()->delete();
+            Storage::disk('categories')->delete($category->photo);
             $category->delete();
             return redirect()->route('admin.categories')->with(['success' => __('admin/messages.deleted')]);
 

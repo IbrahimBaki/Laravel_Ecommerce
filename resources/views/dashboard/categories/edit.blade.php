@@ -52,21 +52,19 @@
                                             @method('PUT')
 
                                             <input type="hidden" name="id" value="{{$category -> id}}">
-
-
-                                            <div class="form-group">
-                                                <div class="text-center">
-                                                    <img src=""
-                                                         alt="{{__('admin/general.catPhoto')}}"
-                                                         class="rounded-circle height-150"
-                                                    >
+                                            @isset($category)
+                                                <div class="row d-flex justify-content-center">
+                                                        <div class="mx-1">
+                                                            <img width="120px" height="150px" class="rounded-circle"
+                                                                 src="{{asset('assets/images/categories/'.$category->photo)}}"
+                                                                 alt="Category Image">
+                                                        </div>
                                                 </div>
-                                            </div>
-
+                                            @endisset
                                             <div class="form-group">
                                                 <label>{{__('admin/general.catPhoto')}}</label>
-                                                <label id="projectinput7" class="file center-block">
-                                                    <input type="file" id="file" name="photo">
+                                                <label id="projectinput7" for="photo" class="file center-block">
+                                                    <input type="file" id="photo" name="photo">
                                                     <span class="file-custom"></span>
                                                 </label>
                                                 @error('photo')
