@@ -46,7 +46,7 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
                                         <table
-                                            class="table display nowrap table-striped table-bordered scroll-horizontal">
+                                            class="table display nowrap table-striped table-bordered">
                                             <thead class="">
                                             <tr>
                                                 <th>{{__('admin/general.name')}}</th>
@@ -83,14 +83,14 @@
                                             </tbody>
                                         </table>
                                         <div class="justify-content-center d-flex">
-
+                                            {!! $options -> links() !!}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {!! $options -> links() !!}
+
                 </section>
             </div>
         </div>

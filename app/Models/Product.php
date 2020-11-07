@@ -69,7 +69,7 @@ class Product extends Model
     }
     public function images()
     {
-        return $this->hasMany(Image::class,'imageable_id','id');
+        return $this->morphMany('App\Models\Image' ,'imageable');
     }
     public function getActive()
     {
@@ -80,4 +80,5 @@ class Product extends Model
     {
         return $this->hasMany(Option::class,'product_id','id');
     }
+
 }

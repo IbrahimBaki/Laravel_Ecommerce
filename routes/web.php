@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    $category =  \App\Models\Category::first();
-    $category ->makeVisible(['translations']);
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-    return $category;
+        Route::group(['prefix'=>'store','namespace'=>'Site'],function(){
+            Route::get('/','StoreController@index')->name('store.index');
+            Route::get('all-products','StoreController@allProducts')->name('store.all.products');
+            Route::get('products/{id}','StoreController@ProductsOfCat')->name('store.cat.products');
+            Route::get('product/details/{id}','StoreController@productDetails')->name('store.product.details');
+        });
+
+
+
 });

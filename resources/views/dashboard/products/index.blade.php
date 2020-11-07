@@ -44,8 +44,7 @@
 
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                        <table
-                                            class="table display nowrap table-striped table-bordered scroll-horizontal">
+                                        <table class="table display nowrap table-striped table-bordered ">
                                             <thead class="">
                                             <tr>
                                                 <th>{{__('admin/general.name')}}</th>
@@ -67,14 +66,23 @@
                                                         <td>{{$product -> price}}</td>
                                                         <td>
                                                             <div class="dropdown">
-                                                                <button class="btn btn-info box-shadow-3 btn-min-width dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <button
+                                                                    class="btn btn-info box-shadow-3 btn-min-width dropdown-toggle"
+                                                                    type="button" id="dropdownMenuButton"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
                                                                     {{__('admin/general.edit')}}
                                                                 </button>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item" href="{{route('admin.products.general.edit',$product->id)}}">{{__('admin/products.description')}}</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.price.edit',$product->id)}}">{{__('admin/general.price')}}</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.stock.edit',$product->id)}}">{{__('admin/products.stock')}}</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.products.images.edit',$product->id)}}">{{__('admin/products.images')}}</a>
+                                                                <div class="dropdown-menu"
+                                                                     aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item"
+                                                                       href="{{route('admin.products.general.edit',$product->id)}}">{{__('admin/products.description')}}</a>
+                                                                    <a class="dropdown-item"
+                                                                       href="{{route('admin.products.price.edit',$product->id)}}">{{__('admin/general.price')}}</a>
+                                                                    <a class="dropdown-item"
+                                                                       href="{{route('admin.products.stock.edit',$product->id)}}">{{__('admin/products.stock')}}</a>
+                                                                    <a class="dropdown-item"
+                                                                       href="{{route('admin.products.images.edit',$product->id)}}">{{__('admin/products.images')}}</a>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -91,7 +99,7 @@
                                             </tbody>
                                         </table>
                                         <div class="justify-content-center d-flex">
-
+                                            {!! $products -> links() !!}
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +107,7 @@
                         </div>
                     </div>
 
-                    {!! $products -> links() !!}
+
                 </section>
             </div>
         </div>

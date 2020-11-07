@@ -48,18 +48,18 @@
 <body class="animsition">
 
 <!-- Begin Header-->
-@include('user.includes.header')
+@include('site.includes.header')
 <!-- End Header-->
 
 <!-- Begin Sidebar-->
-@include('user.includes.sidebar')
+@include('site.includes.sidebar')
 <!-- End Sidebar-->
 
 
 @yield('content')
 
 <!-- Begin footer-->
-@include('user.includes.footer')
+@include('site.includes.footer')
 <!-- End Sidebar-->
 <!-- BEGIN VENDOR JS-->
 <script type="text/javascript" src="{{asset('assets/store/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
