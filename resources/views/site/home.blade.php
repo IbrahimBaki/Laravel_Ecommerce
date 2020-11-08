@@ -1,4 +1,5 @@
 @extends('layouts.store')
+@section('title','home')
 @section('content')
     <!-- Slide1 -->
     <section class="slide1">
@@ -69,10 +70,29 @@
     <section class="banner bgwhite p-t-40 p-b-40">
         <div class="container">
             <div class="row">
+
+                @foreach($categories as $category)
+
+                    <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                        <!-- block1 -->
+                        <div class="block1 hov-img-zoom pos-relative m-b-30">
+                                    <img src="{{asset('assets/images/categories/'.$category->photo)}}" width="370px" height="480px" alt="IMG-BENNER">
+
+                            <div class="block1-wrapbtn w-size2">
+                                <!-- Button -->
+                                <a href="{{route('store.cat.products',$category->slug)}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                                    {{$category->name}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+                {{--
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="{{asset('assets/images/products/'.$images->photo)}}" alt="IMG-BENNER">
+                        <img src="{{asset('assets/store/images/item-02.jpg')}}" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -156,6 +176,8 @@
                         </div>
                     </div>
                 </div>
+
+                --}}
             </div>
         </div>
     </section>

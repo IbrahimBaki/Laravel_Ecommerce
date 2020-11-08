@@ -38,8 +38,8 @@
             <div class="wrap_menu">
                 <nav class="menu">
                     <ul class="main_menu">
-                        <li><a href="{{route('store.index')}}">Home</a></li>
-                        <li><a href="{{route('store.all.products')}}">Shop</a></li>
+                        <li><a href="{{route('landing.page')}}">Home</a></li>
+                        <li><a href="{{route('shop.all')}}">Shop</a></li>
                         <li class="sale-noti"><a href="#">Sale</a></li>
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Blog</a></li>
@@ -59,68 +59,45 @@
 
                 <div class="header-wrapicon2">
                     <img src="{{asset('assets/store/images/icons/icon-header-02.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                    <span class="header-icons-noti">0</span>
+                    <span class="header-icons-noti">{{Cart::count()}}</span>
 
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
                         <ul class="header-cart-wrapitem">
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="{{asset('assets/store/images/item-cart-01.jpg')}}" alt="IMG">
-                                </div>
+                            @if(Cart::count()>0)
+                                @foreach(Cart::content() as $item)
+                                <li class="header-cart-item">
+                                    <div class="header-cart-item-img" style="width: 80px; height: 80px">
+                                        @foreach($item->model->images as $image)
+                                            <img src="{{asset('assets/images/products/'.$image->photo)}}" width="80px" height="80px" alt="IMG">
+                                            @break
+                                        @endforeach
+                                    </div>
 
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        White Shirt With Pleat Detail Back
-                                    </a>
+                                    <div class="header-cart-item-txt">
+                                        <a href="#" class="header-cart-item-name">
+                                            {{$item->model->name}}
+                                        </a>
 
-                                    <span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="{{asset('assets/store/images/item-cart-02.jpg')}}" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Converse All Star Hi Black Canvas
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="{{asset('assets/store/images/item-cart-03.jpg')}}" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Nixon Porter Leather Watch In Tan
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-                                </div>
-                            </li>
+                                        <span class="header-cart-item-info">
+                                                {{$item->qty}} x {{$item->model->price}}
+                                            </span>
+                                    </div>
+                                </li>
+                                @endforeach
+                            @else
+                                <p>No Items In Cart</p>
+                            @endif
                         </ul>
 
                         <div class="header-cart-total">
-                            Total: $75.00
+                            Total: {{Cart::total()}}
                         </div>
 
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="{{route('cart.index')}}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>

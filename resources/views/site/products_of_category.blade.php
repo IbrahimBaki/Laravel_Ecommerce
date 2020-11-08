@@ -1,4 +1,5 @@
 @extends('layouts.store')
+@section('title',$category->name )
 @section('content')
     <!-- Title Page -->
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({{asset('assets/images/cover.jpg')}});">
@@ -33,11 +34,12 @@
                                 @foreach($childCats as $childCat)
                                     @if($childCat->parent_id == $parentCat->id )
                                         <div class="dropdown-content dis-none p-t-15 p-b-23">
-                                            <a href="{{route('store.cat.products',$childCat->id)}}">{{$childCat->name}}</a>
+                                            <a href="{{route('store.cat.products',$childCat->slug)}}">{{$childCat->name}}</a>
                                         </div>
                                     @endif
                                 @endforeach
                             </div>
+
                         @endforeach
 
                         <!--  -->
@@ -192,7 +194,7 @@
                                         </div>
 
                                         <div class="block2-txt p-t-20">
-                                            <a href="{{route('store.product.details', $product->id)}}" class="block2-name dis-block s-text3 p-b-5">
+                                            <a href="{{route('shop.show.one', $product->slug)}}" class="block2-name dis-block s-text3 p-b-5">
                                                 <b>{{$product->name}}</b>
                                             </a>
 

@@ -47,37 +47,29 @@ class Product extends Model
     protected $slugAttribute = 'name';
 
 
-    public function scopeActive($query)
-    {
+    public function scopeActive($query){
         return $query -> where('is_active',1);
     }
-
-
-    public function brand()
-    {
-        return $this->belongsTo(Brand::class )->withDefault();
-    }
-
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class,'product_categories');
-    }
-
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class,'product_tags');
-    }
-    public function images()
-    {
-        return $this->morphMany('App\Models\Image' ,'imageable');
-    }
-    public function getActive()
-    {
+    public function getActive(){
         return $this->is_active == 0 ? __('admin/general.notActive') : __('admin/general.active') ;
     }
 
-    public function options()
-    {
+
+
+
+    public function brand(){
+        return $this->belongsTo(Brand::class )->withDefault();
+    }
+    public function categories(){
+        return $this->belongsToMany(Category::class,'product_categories');
+    }
+    public function tags(){
+        return $this->belongsToMany(Tag::class,'product_tags');
+    }
+    public function images(){
+        return $this->morphMany('App\Models\Image' ,'imageable');
+    }
+    public function options(){
         return $this->hasMany(Option::class,'product_id','id');
     }
 

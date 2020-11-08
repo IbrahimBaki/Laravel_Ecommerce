@@ -1,25 +1,26 @@
 @extends('layouts.store')
+@section('title',$product->name)
 @section('content')
 
     <!-- breadcrumb -->
     <div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-        <a href="#" class="s-text16">
+        <a href="/" class="s-text16">
             Home
             <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
         </a>
 
-        <a href="#" class="s-text16">
-            Women
+        <a href="{{route('shop.all')}}" class="s-text16">
+            Shop
             <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
         </a>
-
-        <a href="#" class="s-text16">
-            T-Shirt
-            <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-        </a>
-
+        @foreach($categories as $category)
+            <a href="{{route('store.cat.products',$category->slug)}}" class="s-text16">
+                {{ $category->name}}
+                <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
+            </a>
+        @endforeach
         <span class="s-text17">
-			Boxy T-Shirt with Roll Sleeve Detail
+			{{$product->name}}
 		</span>
     </div>
 
@@ -56,6 +57,8 @@
                 </p>
 
                 <!--############### Product Options #################  -->
+                <form action="{{route('cart.store')}}" method="POST">
+                    @csrf
                 <div class="p-t-33 p-b-60">
                     @foreach($attributes as $attribute)
                     <div class="flex-m flex-w p-b-10">
@@ -63,10 +66,10 @@
                             <b>{{$attribute->name}}</b>
                         </div>
                         <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-                            <select class="selection-2" name="size">
+                            <select class="selection-2" name="options[{{$attribute->name}}]">
                                 @foreach($options as $option)
                                     @if($option->attribute_id == $attribute->id)
-                                        <option>{{$option->name}}</option>
+                                        <option value="{{$option->id}}">{{$option->name}}</option>
                                     @endif
                                 @endforeach
                             </select>
@@ -75,29 +78,34 @@
                     @endforeach
 
 
+                            <input type="hidden" name="id" value="{{$product->id}}">
+                            <input type="hidden" name="name" value="{{$product->name}}">
+                            <input type="hidden" name="price" value="{{$product->price}}">
+                            <div class="flex-r-m flex-w p-t-10">
+                                <div class="w-size16 flex-m flex-w">
+                                    <div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
+                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+                                            <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
+                                        </button>
 
-                    <div class="flex-r-m flex-w p-t-10">
-                        <div class="w-size16 flex-m flex-w">
-                            <div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
-                                <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                    <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                </button>
+                                        <input class="size8 m-text18 t-center num-product" type="number" name="num_product" value="1">
 
-                                <input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1">
+                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+                                            <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
 
-                                <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                    <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                </button>
+                                    <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
+                                        <!-- Button -->
+                                        <button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+                          </div>
+                        </form>
 
-                            <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
-                                <!-- Button -->
-                                <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="p-b-45">
@@ -184,7 +192,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="{{route('store.product.details', $product->id)}}" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="{{route('shop.show.one', $product->slug)}}" class="block2-name dis-block s-text3 p-b-5">
                                     {{$product->name}}
                                 </a>
 
