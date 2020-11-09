@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14d404025de43d8288113764d512b495",
+    "content-hash": "48b0eba4ed22bf0c28ce789d33b3485b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1647,6 +1647,74 @@
                 "php"
             ],
             "time": "2020-08-09T10:23:20+00:00"
+        },
+        {
+            "name": "olimortimer/laravelshoppingcart",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/olimortimer/LaravelShoppingcart.git",
+                "reference": "bcd52a0e60670ca64fe8af991ae2e2cd1f547dcf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/olimortimer/LaravelShoppingcart/zipball/bcd52a0e60670ca64fe8af991ae2e2cd1f547dcf",
+                "reference": "bcd52a0e60670ca64fe8af991ae2e2cd1f547dcf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.*.* || 6.*.* || 7.*.*",
+                "illuminate/session": "5.*.* || 6.*.* || 7.*.*",
+                "illuminate/support": "5.*.* || 6.*.* || 7.*.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.0 || ^1.0",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "~5.0 || ~6.0 || ~7.0 || ~8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl"
+                },
+                {
+                    "name": "Michael V.",
+                    "email": "michael@michaelbelgium.me"
+                },
+                {
+                    "name": "Oli Mortimer",
+                    "email": "oli@olimortimer.com"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "source": "https://github.com/olimortimer/LaravelShoppingcart/tree/4.0.0"
+            },
+            "time": "2020-03-24T13:17:26+00:00"
         },
         {
             "name": "opis/closure",

@@ -11,10 +11,8 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/general.main')}}</a>
-                                </li>
-                                <li class="breadcrumb-item active"> {{__('admin/general.tags')}}
-                                </li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/general.main')}}</a></li>
+                                <li class="breadcrumb-item active"> {{__('admin/general.tags')}}</li>
                             </ol>
                         </div>
                     </div>
@@ -28,8 +26,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">{{__('admin/general.tagAll')}} </h4>
-                                    <a class="heading-elements-toggle"><i
-                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
                                             <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -82,7 +79,7 @@
                                             </tbody>
                                         </table>
                                         <div class="justify-content-center d-flex">
-
+                                            {!! $tags -> links() !!}
                                         </div>
                                     </div>
                                 </div>

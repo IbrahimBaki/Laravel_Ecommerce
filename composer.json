@@ -16,6 +16,7 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "mcamara/laravel-localization": "^1.5",
+        "olimortimer/laravelshoppingcart": "^4.0",
         "php-http/curl-client": "^2.1",
         "yajra/laravel-datatables-oracle": "~9.0"
     },

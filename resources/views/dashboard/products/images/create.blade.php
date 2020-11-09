@@ -59,7 +59,7 @@
                                     <div class="card-body">
                                         @isset($product)
                                             <div class="row d-flex justify-content-center">
-                                                @foreach($product->images as $image)
+                                                @forelse($product->images as $image)
                                                     <div class="mx-1">
                                                         <img width="120px" height="150px" class="rounded"
                                                              src="{{asset('assets/images/products/'.$image->photo)}}"
@@ -72,7 +72,9 @@
                                                             </button>
                                                         </form>
                                                     </div>
-                                                @endforeach
+                                                @empty
+                                                    <p class="">No Images Found</p>
+                                                @endforelse
                                             </div>
                                         @endisset
                                         <form class="form"

@@ -1,5 +1,6 @@
 <?php
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    $category =  \App\Models\Category::first();
-    $category ->makeVisible(['translations']);
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-    return $category;
+        Route::get('/','Site\LandingPageController@index')->name('landing.page');
+
+        Route::group(['prefix'=>'shop','namespace'=>'Site'],function(){
+            Route::get('/','ShopController@index')->name('shop.all');
+            Route::get('cat/{category}','ShopController@ProductsOfCat')->name('store.cat.products');
+            Route::get('/{product}','ShopController@show')->name('shop.show.one');
+        });
+        Route::get('cart','Site\CartController@index')->name('cart.index');
+        Route::post('cart','Site\CartController@store')->name('cart.store');
+        Route::delete('cart/{product}','Site\CartController@destroy')->name('cart.destroy');
+
+        Route::get('empty',function (){
+            Cart::destroy();
+
+
+        });
+
+
+
+
 });

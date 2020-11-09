@@ -71,19 +71,16 @@ Route::group([
             Route::get('general-information-edit/{id}', 'ProductsController@edit')->name('admin.products.general.edit');
             Route::post('general-information-update/{id}', 'ProductsController@update')->name('admin.products.general.update');
 
-            Route::get('price/{id}', 'ProductsController@getPrice')->name('admin.products.price');
             Route::get('edit-price/{id}', 'ProductsController@editPrice')->name('admin.products.price.edit');
             Route::post('price', 'ProductsController@savePrice')->name('admin.products.price.store');
 
-            Route::get('stock/{id}', 'ProductsController@getStock')->name('admin.products.stock');
             Route::get('edit-stock/{id}', 'ProductsController@editStock')->name('admin.products.stock.edit');
             Route::post('stock', 'ProductsController@saveStock')->name('admin.products.stock.store');
 
-            Route::get('images/{id}', 'ProductsController@addImages')->name('admin.products.images');
             Route::get('edit-images/{id}', 'ProductsController@editImage')->name('admin.products.images.edit');
             Route::post('images', 'ProductsController@saveImagesToFolder')->name('admin.products.images.store');
             Route::post('images-db', 'ProductsController@saveImagesToDB')->name('admin.products.images.store.db');
-            Route::get('image-delete/{id}', 'ProductsController@imgDelete')->name('admin.products.images.delete');
+            Route::get('image-delete/{imgId}', 'ProductsController@imgDelete')->name('admin.products.images.delete');
 
         });
 
