@@ -49,7 +49,7 @@
                 </h4>
 
                 <span class="m-text17">
-					{{intval($product->price)}} L.E
+					{{$product->price}} L.E
 				</span>
 
                 <p class="s-text8 p-t-10">
@@ -63,10 +63,10 @@
                     @foreach($attributes as $attribute)
                     <div class="flex-m flex-w p-b-10">
                         <div class="s-text15 w-size15 t-center">
-                            <b>{{$attribute->name}}</b>
+                            <label for="{{$attribute->name}}">{{$attribute->name}}</label>
                         </div>
                         <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-                            <select class="selection-2" name="options[{{$attribute->name}}]">
+                            <select class="selection-2" id="{{$attribute->name}}" name="options[{{$attribute->name}}]">
                                 @foreach($options as $option)
                                     @if($option->attribute_id == $attribute->id)
                                         <option value="{{$option->id}}">{{$option->name}}</option>
@@ -106,7 +106,7 @@
                           </div>
                         </form>
 
-                </div>
+{{--                </div>--}}
 
                 <div class="p-b-45">
                     <span class="s-text8 m-r-35"><b>SKU:</b> {{$product->sku}}</span>
@@ -197,7 +197,7 @@
                                 </a>
 
                                 <span class="block2-price m-text6 p-r-5">
-									{{intval($product->price)}} L.E
+									{{$product->price}} L.E
 								</span>
                             </div>
                         </div>

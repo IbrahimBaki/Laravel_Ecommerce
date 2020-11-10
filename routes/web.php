@@ -20,22 +20,33 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
 
-        Route::get('/','Site\LandingPageController@index')->name('landing.page');
+        Route::group(['namespace'=>'Site'],function(){
+            Route::get('/','LandingPageController@index')->name('landing.page');
+            Route::group(['prefix'=>'shop'],function(){
+                    Route::get('/','ShopController@index')->name('shop.all');
+                    Route::get('category/{category}','ShopController@ProductsOfCat')->name('store.cat.products');
+                    Route::get('/{product}','ShopController@show')->name('shop.show.one');
+            });
+                Route::get('cart','CartController@index')->name('cart.index');
+                Route::post('cart','CartController@store')->name('cart.store');
+                Route::delete('cart/{product}','CartController@destroy')->name('cart.destroy');
+                Route::post('cart/saveForLater/{product}','CartController@switchToSaveForLater')->name('cart.save.later');
 
-        Route::group(['prefix'=>'shop','namespace'=>'Site'],function(){
-            Route::get('/','ShopController@index')->name('shop.all');
-            Route::get('cat/{category}','ShopController@ProductsOfCat')->name('store.cat.products');
-            Route::get('/{product}','ShopController@show')->name('shop.show.one');
+                Route::delete('saveForLater/{product}','saveForLaterController@destroy')->name('saveForLater.destroy');
+                Route::post('saveForLater/moveToCart/{product}','saveForLaterController@switchToCart')->name('saveForLater.move.to.cart');
+
+                Route::get('checkout','CheckoutController@index')->name('checkout.index');
+
         });
-        Route::get('cart','Site\CartController@index')->name('cart.index');
-        Route::post('cart','Site\CartController@store')->name('cart.store');
-        Route::delete('cart/{product}','Site\CartController@destroy')->name('cart.destroy');
-
-        Route::get('empty',function (){
-            Cart::destroy();
 
 
-        });
+
+
+
+
+
+
+            Route::get('empty',function (){Cart::instance('saveForLater')->destroy();});
 
 
 

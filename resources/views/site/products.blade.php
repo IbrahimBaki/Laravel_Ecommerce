@@ -200,7 +200,7 @@
 
                                             <span class="block2-price m-text6 p-r-5" style="color: #1DC116">
 
-                                                {{intval($product->price)}} L.E
+                                                {{$product->price}} L.E
 
 									</span>
                                         </div>

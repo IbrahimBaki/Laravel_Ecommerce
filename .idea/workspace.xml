@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/StoreController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_25_144431_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_25_144431_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/store/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/store/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/store/css/util.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/util.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brands/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/store.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/store.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/product_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/product_details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/products.blade.php" afterDir="false" />
@@ -169,19 +169,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
-      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
-      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
-      <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\resources\views\site" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar" />
       <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
       <recent name="C:\xampp\htdocs\ecommerce\public\assets\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\resources\views\dashboard\products\prices" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\en\admin" />
+      <recent name="C:\xampp\htdocs\ecommerce\resources\lang\ar\admin" />
+      <recent name="C:\xampp\htdocs\ecommerce\public\assets\admin\images" />
+      <recent name="C:\xampp\htdocs\ecommerce\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -257,6 +257,9 @@
       <workItem from="1604596547493" duration="25394000" />
       <workItem from="1604675851657" duration="20197000" />
       <workItem from="1604748830041" duration="31057000" />
+      <workItem from="1604846618057" duration="17487000" />
+      <workItem from="1604935739881" duration="4816000" />
+      <workItem from="1604957265030" duration="12962000" />
     </task>
     <servers />
   </component>
@@ -278,15 +281,15 @@
     <state x="245" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604173411046" />
     <state x="1617" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1600849876804" />
     <state x="2003" y="118" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1600237876600" />
-    <state x="463" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604757085220">
+    <state x="463" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604876522747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604757085220" />
+    <state x="463" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604876522747" />
     <state x="1936" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1600305405266" />
-    <state x="468" y="187" key="FileChooserDialogImpl" timestamp="1604617037999">
+    <state x="468" y="187" key="FileChooserDialogImpl" timestamp="1604961386682">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="468" y="187" key="FileChooserDialogImpl/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604617037999" />
+    <state x="468" y="187" key="FileChooserDialogImpl/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604961386682" />
     <state x="1846" y="260" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1598050476357" />
     <state x="1942" y="108" key="FileChooserDialogImpl/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601734750598" />
     <state x="1842" y="228" key="NewPhpClassDialog" timestamp="1601014379798">
@@ -311,10 +314,10 @@
     </state>
     <state x="403" y="223" key="run.anything.popup/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604785328372" />
     <state x="1862" y="157" key="run.anything.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1597697472979" />
-    <state x="478" y="182" width="672" height="489" key="search.everywhere.popup" timestamp="1604707103026">
+    <state x="478" y="182" width="672" height="489" key="search.everywhere.popup" timestamp="1604966533575">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="478" y="182" width="672" height="489" key="search.everywhere.popup/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604707103026" />
+    <state x="478" y="182" width="672" height="489" key="search.everywhere.popup/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604966533575" />
     <state x="1864" y="319" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1601113485375" />
     <state x="1869" y="65" width="672" height="678" key="search.everywhere.popup/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601724213624" />
   </component>

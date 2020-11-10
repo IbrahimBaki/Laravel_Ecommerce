@@ -22,8 +22,15 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-        $items =   Cart::add($request->id,$request->name,$request->num_product,$request->price,[$request->options])->associate('App\Models\Product');
-       // return $items;
+        $duplicates = Cart::instance('inCart')->search(function ($cartItem,$rowId)use($request){
+
+            return $cartItem->id === $request->id;
+        });
+        if($duplicates->isNotEmpty()){
+            return redirect()->route('cart.index')->with(['success'=>'Item is already in Cart']);
+        }
+
+          Cart::instance('inCart')->add($request->id,$request->name,$request->num_product,$request->price,[$request->options])->associate('App\Models\Product');
         return redirect()->route('cart.index')->with(['success'=>'Item was added to your cart']);
 
     }
@@ -49,8 +56,21 @@ class CartController extends Controller
 
     public function destroy($id)
     {
-        Cart::remove($id);
-
+        Cart::instance('inCart')->remove($id);
         return back()->with(['success'=>'Item has been removed']);
+    }
+
+    public function switchToSaveForLater($id)
+    {
+        $item = Cart::instance('inCart')->get($id);
+        Cart::instance('inCart')->remove($id);
+        $duplicates = Cart::instance('saveForLater')->search(function($cartItem,$rowId) use ($item){
+           return $cartItem->id = $item->id;
+        });
+        if($duplicates->isNotEmpty()){
+            return redirect()->route('cart.index')->with(['success'=>'Item is already saved for later']);
+        }
+        Cart::instance('saveForLater')->add($item->id,$item->name,$item->qty,$item->price,[$item->options])->associate('App\Models\Product');
+        return redirect()->route('cart.index')->with(['success'=>'Item has been saved for later']);
     }
 }

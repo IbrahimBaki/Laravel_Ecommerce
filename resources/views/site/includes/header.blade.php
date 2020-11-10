@@ -59,13 +59,13 @@
 
                 <div class="header-wrapicon2">
                     <img src="{{asset('assets/store/images/icons/icon-header-02.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                    <span class="header-icons-noti">{{Cart::count()}}</span>
+                    <span class="header-icons-noti">{{Cart::instance('inCart')->count()}}</span>
 
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
                         <ul class="header-cart-wrapitem">
-                            @if(Cart::count()>0)
-                                @foreach(Cart::content() as $item)
+                            @if(Cart::instance('inCart')->count()>0)
+                                @foreach(Cart::instance('inCart')->content() as $item)
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img" style="width: 80px; height: 80px">
                                         @foreach($item->model->images as $image)
@@ -90,9 +90,17 @@
                             @endif
                         </ul>
 
-                        <div class="header-cart-total">
-                            Total: {{Cart::total()}}
+                        <div class="header-cart-total mb-1">
+                           <span> subTotal:</span><p class="float-r flex-r">{{Cart::instance('inCart')->subtotal()}}</p>
                         </div>
+                        <div class="header-cart-total">
+                        <span>Tax: </span><p class="float-r flex-r" >{{Cart::instance('inCart')->tax()}}</p>
+                        </div>
+                        <div class="header-cart-total">
+                        <span>Total:</span><p class="float-r flex-r">{{Cart::instance('inCart')->total()}}</p>
+                        </div>
+
+
 
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
