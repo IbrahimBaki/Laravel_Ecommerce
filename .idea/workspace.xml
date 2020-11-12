@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729ff330-0198-4f24-a9cf-0c693ec4614c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/site/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/store/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/store/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/store/css/util.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/store/css/util.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brands/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/store.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/store.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/product_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/product_details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/products_of_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/products_of_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yii2-basics" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -260,6 +246,8 @@
       <workItem from="1604846618057" duration="17487000" />
       <workItem from="1604935739881" duration="4816000" />
       <workItem from="1604957265030" duration="12962000" />
+      <workItem from="1605000231068" duration="1305000" />
+      <workItem from="1605013055589" duration="465000" />
     </task>
     <servers />
   </component>
@@ -286,10 +274,10 @@
     </state>
     <state x="463" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604876522747" />
     <state x="1936" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1600305405266" />
-    <state x="468" y="187" key="FileChooserDialogImpl" timestamp="1604961386682">
+    <state x="468" y="187" key="FileChooserDialogImpl" timestamp="1605013517817">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="468" y="187" key="FileChooserDialogImpl/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1604961386682" />
+    <state x="468" y="187" key="FileChooserDialogImpl/0.0.1366.728/-110.-1050.1680.1010@0.0.1366.728" timestamp="1605013517817" />
     <state x="1846" y="260" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1400.1010@1366.0.1400.1010" timestamp="1598050476357" />
     <state x="1942" y="108" key="FileChooserDialogImpl/1366.-152.1680.1010/0.0.1366.728@1366.-152.1680.1010" timestamp="1601734750598" />
     <state x="1842" y="228" key="NewPhpClassDialog" timestamp="1601014379798">
